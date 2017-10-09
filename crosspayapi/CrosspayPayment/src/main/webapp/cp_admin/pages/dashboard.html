@@ -1,0 +1,98 @@
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+             <div class="row">
+                <div class="col-lg-12">
+                   <div class="page-header" style="font-size: 20px;font-weight: bold;"> Dashboard</div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+                    <div class="well col-lg-12">
+                        <div class= "col-lg-6">
+          
+    <p><b>Please enter the amount you would like to send in either GBP or destination currency and select the service type.</b></p>
+    </div>
+    <!-- /.col-lg-6 -->
+             <div class= "col-lg-6">
+
+             <div class="input-group below24 bias-input-group" >
+
+                         <input type="text" ng-pattern-restrict="^(?:[0-9]+(?:\.[0-9]{0,2})?)?$"  class="form-control" ng-change="getRate(rate)"  ng-model="rate"  name="custom_name" placeholder="0" id="focusedInput">
+
+                          <div class="input-group-btn bs-dropdown-to-select-group">
+                            <button type="button" class="btn btn-default dropdown-toggle as-is bs-dropdown-to-select" data-toggle="dropdown" tabindex="-1" id="focusedDropdown">
+                        <span data-bind="bs-drp-sel-label">  GBP <img src="img/gbp.png" alt="logo" class="immm"></span>
+                                <input type="hidden" name="country_path"  data-bind="bs-drp-sel-value" value="USD" >
+                               <!-- <span class="caret"></span>-->
+                               <!-- <span class="sr-only">Toggle Dropdown</span>-->
+                            </button>
+                            <!--<ul class="dropdown-menu" role="menu" >
+                           
+       <li data-value="INR"><a href="#">INR </a></li>
+       <li data-value="UK"><a href="#">UK </a></li>
+                            
+                            </ul>-->
+                          </div>
+                        </div>  
+            <!-- /.col-lg-6 -->
+              </div>
+   				<div class= "col-lg-6" ng-if="RateData.ccyfrom">Rate &nbsp;:&nbsp;&nbsp;1 {{RateData.ccyfrom}} = {{RateData.INR}}&nbsp;&nbsp; {{RateData.ccyto}}</div>
+              <div class= "col-lg-6"></div>
+              <div class= "col-lg-6">
+             <div class="input-group below24 bias-input-group" >
+                         <input type="text" ng-pattern-restrict="^(?:[0-9]+(?:\.[0-9]{0,2})?)?$"   class="form-control" ng-change="getRate1(rate1)" ng-model="rate1"  name="custom_name1" placeholder="0" id="focusedInput">
+                          <div class="input-group-btn bs-dropdown-to-select-group">
+                            <button type="button" class="btn btn-default dropdown-toggle as-is bs-dropdown-to-select" data-toggle="dropdown" tabindex="-1" id="focusedDropdown">
+                               <span data-bind="bs-drp-sel-label" style="padding: 5px;"> INR  <img src="img/inr.png" alt="logo" style="width:74px;height: 40px;"></span>
+                                <input type="hidden" name="country_path" data-bind="bs-drp-sel-value" value="USD" >
+                                <!--<span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>-->
+                            </button>
+                          <!--  <ul class="dropdown-menu" role="menu" >
+                           
+        <li data-value="INR"><a href="#">INR</span> </a></li>
+        <li data-value="UK"><a href="#">UK</span> </a></li>
+         
+                            </ul>-->
+                          </div>
+                        </div>  
+            <!-- /.col-lg-6 -->
+   <div class= "col-lg-12">
+
+     <div class= "col-lg-3"></div>
+   <div class= "col-lg-4" style="margin-top: 12px; text-align: center;" ><b>TRANSFER FEE</b></div>
+     <div class= "col-lg-2"></div></div>
+     
+   <div class= "col-lg-12" style="margin-top:15px;">
+   <div class="col-lg-12" >
+    <div class="col-lg-4">Cash Payout</div><div class="col-lg-2" style="margin-left:4px;">|</div>
+    <div class="col-lg-4" style="text-align:right">Account Credit</div>
+   </div>
+   <div class="col-lg-12">
+    <div class="col-lg-4"><b>{{RateData.cashcommission}} {{RateData.ccyfrom}}</b></div><div class="col-md-2"></div>
+    <div class="col-lg-4" style="text-align:right"><b>{{RateData.commission}} {{RateData.ccyfrom}}</b></div>
+   </div>
+      </div>
+   
+            <!-- <div >Transfer Fee : {{RateData.commission}} {{RateData.ccyfrom}}</div>
+   <div style="margin-top: 12px;">Cash Transfer Fee : {{RateData.cashcommission}} {{RateData.ccyfrom}}</div>
+             -->
+            
+<!--             <a href="select_receiver.html"><button type="button" class="btn btn-info btn-lg col-sm-4 col-sm-push-3">Proceed</button></a>  <br><br>-->
+              <div class="col-lg-12">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-8"><a><button  style="margin-top: 26px;" class="btn proceed btn-lg col-md-offset-2" type="button" ng-click="checkRate(finalrate,RateData)" >Proceed</button></a></div>
+              <div class="col-lg-3"></div>
+              </div> 
+              </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+ </div>

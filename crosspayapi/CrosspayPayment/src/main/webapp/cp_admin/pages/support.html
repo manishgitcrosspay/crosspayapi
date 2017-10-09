@@ -1,0 +1,803 @@
+ <style>
+	 
+	  .margin{
+		  margin-top: 25px;
+	  }
+
+	  .btn-primary, .btn-xl, h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+     text-transform: capitalize !important; 
+     font-weight: normal!important; 
+}
+
+
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+
+
+  </style>
+  
+ 
+
+  
+   <script>
+		  $(document).ready(function(){
+			$(this).scrollTop(0);
+		});
+  </script>
+  
+
+
+
+<body>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+
+       <!-- Navigation -->
+       
+        <div id="page-wrapper">
+        
+        
+
+				<div class="container-fluid">
+					<!--  <h2>Welcome To Crosspay</h2> -->
+					 <div class="page-header" style="font-size: 20px;font-weight: bold;">Welcome To Crosspay</div>
+				<!-- <div class="panel-group margin" id="accordion">
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+						  <span class="glyphicon glyphicon-minus"></span>
+						 What is Crosspay?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+					  <div class="panel-body" align="justify">
+						Crosspay is a UK based digital payments company that allows individuals and corporates to send payments overseas for personal and business needs using a smartphone, tablet, computer or by calling our dedicated team. 
+						We provide extremely competitive rates and our charges are low, and we also provide a personalised service to all our customers!
+						Money can be sent to bank accounts and for cash pick-ups. We are constantly expanding the options through which people can receive money.
+						You can send money to over 100 countries currently and this number is growing!
+					  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   Is it safe to send money through Crosspay?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Yes. Safety and Security is very important to us. We ensure that our website and mobile app is secure by using industry standard encryption.
+						All the partner companies we use to process payments are also required to comply with strict security and privacy standards.
+						Crosspay is regulated as an Authorised Payment Institution by the Financial Conduct Authority (FCA), and we are legally required to hold all of our customers’ funds in a segregated client account separate from our operational accounts.
+					  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+						  <span class="glyphicon glyphicon-plus"></span>
+						 How is Crosspay regulated?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Crosspay Ltd is authorised by the Financial Conduct Authority under the Payment Services Regulations 2009 (FRN 720157) for the provision of payment services.
+						Crosspay Ltd is licensed and regulated by HMRC as a Money Services Business (MSB), Licence No.12847230.
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   How do I sign up for an account?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse">
+					  <div class="panel-body">
+						You can sign up for an account through this link on our website. It is completely free and you will be required to provide some very basic details of yourself.
+						We are also working on our mobile app and once this is ready you can also sign up there.
+						Alternatively, you can also contact us here and someone will help you get this done.
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+						  <span class="glyphicon glyphicon-plus"></span>
+						  How do I amend/close my account?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseFive" class="panel-collapse collapse">
+					  <div class="panel-body">
+						You can amend details on your account anytime, but for security reasons this can only be authorised by getting in touch with us. <br>
+
+						If for any reason you would like to close your account, contact us and we will delete your account. Once this is done it cannot be accessed by you or anybody else.
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   Can I have multiple accounts?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseSix" class="panel-collapse collapse">
+					  <div class="panel-body">
+						No. You can only sign up once. If we find that there is more than one account for a customer, we may block all the accounts.<br>
+
+						If you think you may have created more than one account, let us know by contacting us here and we will keep the one you want and close the other(s).
+					  </div>
+					</div>
+				  </div>
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+						  <span class="glyphicon glyphicon-plus"></span>
+						  How can I process a transaction?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseSeven" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Processing a transaction can be done in three simple steps. <br><br>
+
+						Choose which country you want to send money to and how you would like the recipient to receive the money.
+						<br>
+						 Tell us who you want to send money to by providing their name and other relevant details (If it is the first time you are sending money to a recipient this may need to be authorised by us and then going forward the details will be saved in your account) 
+						<br>
+						 Tell us the amount of money you want to send, review the details and pay for your transfer.
+						<br><br>
+						You can do this by logging in to your account on our website or through the mobile app.
+						<br><br>
+
+						Alternatively, you can also call or email us here, and we can help with you with it. Make sure you have your customer number ready to quote.
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+						  <span class="glyphicon glyphicon-plus"></span>
+						 How will I know the charges and exchange rates?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseEight" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Our charges and exchange rate will be clearly displayed at the time of doing the transaction. You can also use our online calculator to get this information.
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+						  <span class="glyphicon glyphicon-plus"></span>
+						  How long will the transfer take?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseNine" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Generally, it takes just one working day. However, this can vary depending on which country you are sending to and how you are sending it. <br><br>
+
+						The transaction itself will be only be released once we can confirm that the payment has been made and received by us.<br>
+
+						The time indicated may also vary slightly due to some things such as additional security checks, market conditions in the destination countries which are beyond our control.<br>
+
+						Any transactions made on Friday evening and weekends and bank holidays will only be processed on the next working day.
+					  </div>
+					</div>
+				  </div>
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   What happens after I confirm my payment?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseTen" class="panel-collapse collapse">
+					  <div class="panel-body">
+						There is nothing more to do from your side, unless you are contacted by us for additional details.<br>
+
+						We will verify some information and process the transaction.<br>
+
+						If you want to ask us anything about the progress of your transaction, please contact us.
+						  </div>
+					</div>
+				  </div>
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   How can I amend my transaction details?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse11" class="panel-collapse collapse">
+					  <div class="panel-body">
+						As most transactions are processed within minutes, it may not be possible to amend any details. However, if you do need to amend any details on a transaction, contact us here and we will try our best to help you.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+						  <span class="glyphicon glyphicon-plus"></span>
+						  How can I cancel my transaction?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse12" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Most transactions are processed within minutes and cannot be cancelled. However, if you do need to cancel a transaction, contact us here and we will try our best to help you. <br>
+
+						If a cancellation is possible, we may not be able to refund the charges in most situations. We will give you more information at the time.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   Who can receive money?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse13" class="panel-collapse collapse">
+					  <div class="panel-body">
+						There are a lot of scams that are being run by criminals who try to get victims to send money through services like Crosspay. So we advise you not to send money to anyone you don’t know.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse14">
+						  <span class="glyphicon glyphicon-plus"></span>
+						  Why do I need to provide ID?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse14" class="panel-collapse collapse">
+					  <div class="panel-body">
+						If we are unable to verify your identity independently or depending on the amount you're sending, we may ask you to provide some of the following documents to verify your identity: <br>
+
+						Proof of Identity: Scanned copy of your passport/Scanned copy of full UK driving licence (not provisional)/Scanned copy of EU member state ID card with photo <br>
+
+						Proof of Address: Utility bill* (we don’t accept mobile phone bills or payslips)/Bank statement*/Bank letter*/Tenancy Agreement/Credit card statement*/NHS letter/Provisional driving licence/Council Tax bill*/Official letter from any UK Government body <br>
+
+						*These documents should not be more than three months old.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse15">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   Do I need to provide any other supporting documents?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse15" class="panel-collapse collapse">
+					  <div class="panel-body">
+						Depending on the amount being sent and for certain types of transactions, we may ask you to provide some of the following documents to verify the source of funds: <br><br>
+
+						Payslip/Bank statement/screenshot from online banking/Tax rebate receipt/Completion statement of house sale/Car sale receipt, etc./Bank loan documents (including mortgages)
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse16">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   How do I send my ID and supporting documents?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse16" class="panel-collapse collapse">
+					  <div class="panel-body">
+						We are working on a feature where you can upload the documents directly on to your account, in the meantime when requested, you can email the documents to payments@crosspayments.com
+						  </div>
+					</div>
+				  </div>
+				  
+				   <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse17">
+						  <span class="glyphicon glyphicon-plus"></span>
+						    How can I pay for my transfer?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse17" class="panel-collapse collapse">
+					  <div class="panel-body">
+						You can pay in the following ways: <br><br>
+
+						By debit/credit card (for telephone transactions, this is up to a maximum of £1000 for a 30-day period; for online transactions, this is up to a maximum of £2000 over a 30-day period).<br>
+
+						By bank transfer (any amount as long your bank will allow it)<br>
+
+						Remember, there may be restrictions on how much can be received depending on the country you are sending to and the how you are sending the transaction.<br><br>
+
+						We do not accept cash or cheques.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse18">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   Can someone else pay on my behalf?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse18" class="panel-collapse collapse">
+					  <div class="panel-body">
+						No. We don’t accept payments from anyone other than yourself (the customer). When making the payment, make sure that the money is either being transferred from your account or made using your debit/credit card.
+						  </div>
+					</div>
+				  </div>
+				  
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse19">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   I am a Corporate, how do I sign up and process transactions?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse19" class="panel-collapse collapse">
+					  <div class="panel-body">
+						If you are a corporate, contact us and we will help you get going as it is a slightly different process to signing up as an Individual.<br>
+
+						We will be happy to give you a personalised service.
+						  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse20">
+						  <span class="glyphicon glyphicon-plus"></span>
+						   I can’t find the answer to what I am looking for
+						</a>
+					  </h4>
+					</div>
+					<div id="collapse20" class="panel-collapse collapse">
+					  <div class="panel-body">
+						If you can’t find the answer to your what you are looking for, contact us and someone will be happy to help you out.
+						  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				</div>
+ -->
+
+
+				<button class="accordion" style="f"> What is Crosspay?</button>
+				<div class="panel">
+				<div class="panel-body" align="justify">
+						Crosspay is a UK based digital payments company that allows individuals and corporates to send payments overseas for personal and business needs using a smartphone, tablet, computer or by calling our dedicated team. 
+						We provide extremely competitive rates and our charges are low, and we also provide a personalised service to all our customers!
+						Money can be sent to bank accounts and for cash pick-ups. We are constantly expanding the options through which people can receive money.
+						You can send money to over 100 countries currently and this number is growing!
+					  </div>
+				</div>
+
+
+				<button class="accordion">  Is it safe to send money through Crosspay?</button>
+				<div class="panel">
+				<p>Yes. Safety and Security is very important to us. We ensure that our website and mobile app is secure by using industry standard encryption.
+						All the partner companies we use to process payments are also required to comply with strict security and privacy standards.
+						Crosspay is regulated as an Authorised Payment Institution by the Financial Conduct Authority (FCA), and we are legally required to hold all of our customers’ funds in a segregated client account separate from our operational accounts.</p>
+				</div>
+
+
+
+				<button class="accordion"> How is Crosspay regulated?</button>
+
+				<div class="panel">
+
+
+					  <div class="panel-body">
+						Crosspay Ltd is authorised by the Financial Conduct Authority under the Payment Services Regulations 2009 (FRN 720157) for the provision of payment services.
+						Crosspay Ltd is licensed and regulated by HMRC as a Money Services Business (MSB), Licence No.12847230.
+					  </div>
+					</div>
+
+
+					<button class="accordion">   How do I sign up for an account?</button>
+
+				  <div class="panel">
+
+                  <div class="panel-body">
+						You can sign up for an account through this link on our website. It is completely free and you will be required to provide some very basic details of yourself.
+						We are also working on our mobile app and once this is ready you can also sign up there.
+						Alternatively, you can also contact us here and someone will help you get this done.
+					  </div>
+					</div>
+
+
+					<button class="accordion">How do I amend/close my account?</button>
+
+                   <div class="panel">
+                 <div class="panel-body">
+						You can amend details on your account anytime, but for security reasons this can only be authorised by getting in touch with us. <br>
+
+						If for any reason you would like to close your account, contact us and we will delete your account. Once this is done it cannot be accessed by you or anybody else.
+					  </div>
+					</div>
+				   
+
+
+				   <button class="accordion"> Can I have multiple accounts?</button>
+
+
+                   <div class="panel">
+               <div class="panel-body">
+						No. You can only sign up once. If we find that there is more than one account for a customer, we may block all the accounts.<br>
+
+						If you think you may have created more than one account, let us know by contacting us here and we will keep the one you want and close the other(s).
+					  </div>
+					</div>
+
+
+
+					  <button class="accordion"> How can I process a transaction?</button>
+
+
+
+				    
+                   <div class="panel">
+               <div class="panel-body">
+						Processing a transaction can be done in three simple steps. <br><br>
+
+						Choose which country you want to send money to and how you would like the recipient to receive the money.
+						<br>
+						 Tell us who you want to send money to by providing their name and other relevant details (If it is the first time you are sending money to a recipient this may need to be authorised by us and then going forward the details will be saved in your account) 
+						<br>
+						 Tell us the amount of money you want to send, review the details and pay for your transfer.
+						<br><br>
+						You can do this by logging in to your account on our website or through the mobile app.
+						<br><br>
+
+						Alternatively, you can also call or email us here, and we can help with you with it. Make sure you have your customer number ready to quote.
+					  </div>
+					</div>
+
+					  <button class="accordion"> Can I have multiple accounts?</button>
+
+				    
+                   <div class="panel">
+               <div class="panel-body">
+						No. You can only sign up once. If we find that there is more than one account for a customer, we may block all the accounts.<br>
+
+						If you think you may have created more than one account, let us know by contacting us here and we will keep the one you want and close the other(s).
+					  </div>
+					</div>
+
+
+					  <button class="accordion"> 
+					   How will I know the charges and exchange rates?
+					    </button>
+
+					 
+                   <div class="panel">
+               <div class="panel-body">
+						Our charges and exchange rate will be clearly displayed at the time of doing the transaction. You can also use our online calculator to get this information.
+					  </div>
+					</div>
+				   
+
+				    <button class="accordion"> 
+					     How long will the transfer take?
+					    </button>
+
+
+                   <div class="panel">
+               <div class="panel-body">
+						Generally, it takes just one working day. However, this can vary depending on which country you are sending to and how you are sending it. <br><br>
+
+						The transaction itself will be only be released once we can confirm that the payment has been made and received by us.<br>
+
+						The time indicated may also vary slightly due to some things such as additional security checks, market conditions in the destination countries which are beyond our control.<br>
+
+						Any transactions made on Friday evening and weekends and bank holidays will only be processed on the next working day.
+					  </div>
+					</div>
+
+                   <button class="accordion"> 
+					      What happens after I confirm my payment?
+					    </button>
+                    
+
+
+                   <div class="panel">
+               <div class="panel-body">
+						There is nothing more to do from your side, unless you are contacted by us for additional details.<br>
+
+						We will verify some information and process the transaction.<br>
+
+						If you want to ask us anything about the progress of your transaction, please contact us.
+						  </div>
+					</div>
+                  
+
+                    <button class="accordion"> 
+					       How can I amend my transaction details?
+					    </button>
+
+                   <div class="panel">
+                 <div class="panel-body">
+						As most transactions are processed within minutes, it may not be possible to amend any details. However, if you do need to amend any details on a transaction, contact us here and we will try our best to help you.
+						  </div>
+					</div>
+
+
+
+                       <button class="accordion"> 
+					    
+					       Who can receive money?
+					    </button>
+                    
+
+                   <div class="panel">
+                  <div class="panel-body">
+						There are a lot of scams that are being run by criminals who try to get victims to send money through services like Crosspay. So we advise you not to send money to anyone you don’t know.
+						  </div>
+						    </div>
+
+
+
+				   
+				     <button class="accordion"> 
+				   Why do I need to provide ID?
+					    </button>
+
+                   <div class="panel">
+                  <div class="panel-body">
+						If we are unable to verify your identity independently or depending on the amount you're sending, we may ask you to provide some of the following documents to verify your identity: <br>
+
+						Proof of Identity: Scanned copy of your passport/Scanned copy of full UK driving licence (not provisional)/Scanned copy of EU member state ID card with photo <br>
+
+						Proof of Address: Utility bill* (we don’t accept mobile phone bills or payslips)/Bank statement*/Bank letter*/Tenancy Agreement/Credit card statement*/NHS letter/Provisional driving licence/Council Tax bill*/Official letter from any UK Government body <br>
+
+						*These documents should not be more than three months old.
+						  </div>
+					</div>
+
+
+                        <button class="accordion"> 
+					  Do I need to provide any other supporting documents?
+					    </button>
+
+                   <div class="panel">
+                 <div class="panel-body">
+						Depending on the amount being sent and for certain types of transactions, we may ask you to provide some of the following documents to verify the source of funds: <br><br>
+
+						Payslip/Bank statement/screenshot from online banking/Tax rebate receipt/Completion statement of house sale/Car sale receipt, etc./Bank loan documents (including mortgages)
+						  </div>
+					</div>
+
+
+
+					 <button class="accordion"> 
+			   How do I send my ID and supporting documents?
+					    </button>
+
+                   <div class="panel">
+                 <div class="panel-body">
+						We are working on a feature where you can upload the documents directly on to your account, in the meantime when requested, you can email the documents to payments@crosspayments.com
+						  </div>
+					</div>
+
+
+					 <button class="accordion"> 
+			  How can I pay for my transfer?
+					    </button>
+
+                   <div class="panel">
+                 <div class="panel-body">
+						You can pay in the following ways: <br><br>
+
+						By debit/credit card (for telephone transactions, this is up to a maximum of £1000 for a 30-day period; for online transactions, this is up to a maximum of £2000 over a 30-day period).<br>
+
+						By bank transfer (any amount as long your bank will allow it)<br>
+
+						Remember, there may be restrictions on how much can be received depending on the country you are sending to and the how you are sending the transaction.<br><br>
+
+						We do not accept cash or cheques.
+						  </div>
+					</div>
+
+
+					 <button class="accordion"> 
+			            Can someone else pay on my behalf?
+					    </button>
+
+
+                   <div class="panel">
+                 <div class="panel-body">
+						No. We don’t accept payments from anyone other than yourself (the customer). When making the payment, make sure that the money is either being transferred from your account or made using your debit/credit card.
+						  </div>
+					</div>
+
+					 <button class="accordion"> 
+			
+					     I am a Corporate, how do I sign up and process transactions?
+					    </button>
+
+						
+
+                   <div class="panel">
+                <div class="panel-body">
+						If you are a corporate, contact us and we will help you get going as it is a slightly different process to signing up as an Individual.<br>
+
+						We will be happy to give you a personalised service.
+						  </div>
+					</div>
+
+
+         <button class="accordion"> 
+			    I can’t find the answer to what I am looking for?
+					    </button>
+
+                   <div class="panel">
+               <div class="panel-body">
+						If you can’t find the answer to your what you are looking for, contact us and someone will be happy to help you out.
+						  </div>
+					</div>
+					   <div class="col-md-12" style="background: : #fff;">
+					<h3 style="text-transform: capitalize;">Reach Us</h3>
+					<p>info@crosspayments.com</p>
+					<p>+44 (0) 203 096 2255</p>
+
+
+					</div>
+
+				 
+
+
+				</div>
+					
+				 </div>
+			   
+			    </div>
+				</div>
+
+ 
+ <!--   
+    <script>
+	$('.collapse').on('shown.bs.collapse', function(){
+$(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+}).on('hidden.bs.collapse', function(){
+$(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+});
+	</script> -->
+
+ <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+
+
+
+
+
+</body>
+

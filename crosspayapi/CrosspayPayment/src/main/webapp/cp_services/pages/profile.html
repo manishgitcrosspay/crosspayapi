@@ -1,0 +1,244 @@
+<script>
+      $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
+
+  </script>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+         <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header" style="font-size: 20px;font-weight: bold;"> Profile
+                      
+                        
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header"> {{profileData.data[0].first_name}} {{profileData.data[0].middle_name}} {{profileData.data[0].last_name}}
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+                
+                
+         <div class="row">
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">First Name</label>
+                              <div>{{profileData.data[0].first_name}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Middle Name</label>
+                              <div>{{profileData.data[0].middle_name}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Last Name</label>
+                              <div>{{profileData.data[0].last_name}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+
+        </div>
+         <div class="hr-line-dashed"></div>
+         <div class="row">
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Email Address</label>
+                              <div>{{profileData.data[0].email}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Phone Number</label>
+                              <div>{{profileData.data[0].phone_num}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Mobile Number</label>
+                              <div>{{profileData.data[0].mobile}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            </div>
+             <div class="hr-line-dashed"></div>
+             <div class="row">
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Date Of Birth</label>
+                              <div>{{profileData.data[0].dob}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Gender</label>
+                              <div>{{profileData.data[0].gender}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Nationality</label>
+                              <div>{{profileData.data[0].nationality}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            </div>
+            <!-- <div class="hr-line-dashed"></div>-->
+             <!--<div class="row">
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">ID Type</label>
+                              <div>UK ID Card </div>
+                        </div>    
+               
+             
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">ID Number</label>
+                              <div>F1383359552ON31016 </div>
+                        </div>    
+               
+            
+            </div>
+             <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Issued By</label>
+                              <div>UK</div>
+                        </div>    
+               
+              
+            </div>
+           </div>-->
+            <!--<div class="hr-line-dashed"></div>-->
+           <!-- <div class="row">
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Issued Date</label>
+                              <div>26-Jul-2005</div>
+                        </div>    
+               
+                
+            </div>
+
+             <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Valid Till </label>
+                              <div>XXXXX</div>
+                        </div>    
+               
+               
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              
+                              <img src="img/Layer 8.png" style="width: 100px;height: 70px; border: 5px solid #2bc7d7;">
+                        </div>    
+               
+               
+            </div>
+            </div>-->
+
+             <div class="hr-line-dashed"></div>
+             <div class="row">
+                    <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Country</label>
+                              <div>{{profileData.data[0].country}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">County</label>
+                              <div>{{profileData.data[0].state}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+            <div class=" col-md-4">
+                        <div class="form-group">
+                              <label class="profile_view">Zip Code</label>
+                              <div>{{profileData.data[0].pincode}}</div>
+                        </div>    
+               
+                <!-- /.col-md-4 -->
+            </div>
+        </div>
+         <div class="hr-line-dashed"></div>
+             <div class="row">
+            <div class=" col-md-6">
+                        <div class="form-group">
+                               <label class="profile_view">Address 1 </label>
+                               <div>{{profileData.data[0].address1}}</div>
+                        </div>    
+               
+                <!-- /.col-md-6 -->
+            </div>
+            <div class=" col-md-6">
+                        <div class="form-group">
+                               <label class="profile_view">Address 2</label>
+                               <div>{{profileData.data[0].address2}}</div>
+                        </div>    
+               
+                <!-- /.col-md-6 -->
+            </div>
+        </div>
+         <div class="hr-line-dashed"></div>
+		 <p style="text-align: left;color: red;    font-size: 12px;    margin-top: 25px;">Note: If any of the above details are incorrect, please email info@crosspayments.com or call +44 (0) 203 096 2255</p>             
+
+         <!-- <a ><button ng-click="profileUpdate()" type="button" class=" proceeds btn btn-info btn-lg col-md-offset-6">Update</button></a> -->
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+</div>
+
+
+
+  <script type="text/javascript">
+    
+
+  //   $(function () {
+  //     $('.txtFirstName').keydown(function (e) {
+  //         if (e.shiftKey || e.ctrlKey || e.altKey) {
+  //             e.preventDefault();
+  //         } else {
+  //             var key = e.keyCode;
+  //             if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+  //                 e.preventDefault();
+  //             }
+  //         }
+  //     });
+  // });
+  // </script>

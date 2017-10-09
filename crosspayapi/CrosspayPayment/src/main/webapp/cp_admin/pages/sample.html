@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Crosspay </title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+     <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/agency.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">	
+
+		
+		
+		
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+    <style type="text/css">  	
+ 
+ 		
+ / (1024x768) iPad 1 & 2, XGA /
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    / insert styles here /
+   
+   .ital {
+    color: #2bc7d7;
+    font-size: 24px;
+  }
+   .lorem {
+    font-family: Roboto;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 10px;
+    text-transform: none;
+    font-size: 35px;
+}
+   .gbp {
+       padding-bottom: 15px;
+    padding-top: 10px;
+    font-size: 19px;
+}
+   }
+   /* (1600x900) HD+ Display */
+		@media  screen and (max-width: 1600px) {
+
+			.form-control {
+				font-size: 30px;
+			}
+		}
+ table tr:first-child th { /* first row */
+    border-top: 0px solid ;
+}
+table tr:first-child td {
+	border-top: 0px; 
+} 
+	.panel-info > .panel-heading {
+
+					background-color: #2bc7d7;								
+					font-family:Roboto;				
+					
+					color: #fff;
+					border-color: #2bc7d7;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+			}
+		.panel-info {
+				border-color: #78d9e2;
+				border-top-left-radius: 11px;
+				border-top-right-radius: 11px;
+				border-bottom-left-radius: 11px;
+				border-bottom-right-radius: 11px;
+				/*margin-top: -5px;*/
+			}
+
+  </style>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a href="index.html"><img src="../img/logo.png" class="logoo" alt="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Home">HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#ABOUTUS">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#WHYUS">WHY US</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#HowItWorks">HOW IT WORKS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#FEATURES">FEATURES</a>
+                    </li>
+                    <!-- <li>
+                        <a class="page-scroll" href="#Testimonials">TESTIMONIALS</a>
+                    </li>-->
+                    <li>
+                        <a class="page-scroll" href="#CONTACT">CONTACT</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="login.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    	<header>
+    		<section id="Home">
+    			  <div class="container-fluid">
+    			  <div  class="row">
+    			  			<div class="col-md-6 intro-lead-in intro-text introtext" align="left" >
+    			  				<h1 class="lorem"><b>SEND MONEY ONLINE <i class="ital">For Less</i></b></h1><br>
+				           		<h3 class="lorem1"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Choose Destination Country <br><br>
+				           		<i class="fa fa-check-circle-o" aria-hidden="true"></i> Enter Recipient Details <br><br>
+				           		<i class="fa fa-check-circle-o" aria-hidden="true"></i> Confirm Amount &amp; Pay</h3>
+    			  			</div>
+
+    			  			  	<!-- rate tracker -->
+           	<div class="col-md-6">
+           	    <div class="col-md-9" > 
+		            <div class="panel panel-info">
+		                 <div class="panel-heading"><h2 style="text-transform: none;">Kick Start Here</h2></div>
+						 <div class="panel-body">
+						  <div class="table-responsive">          
+						  <table class="table">
+						    <tbody>
+						      <tr class="border-less">
+						       <th class="col-md-5"> <input type="text" class="form-control compareinput" id="usr" placeholder="2,000"> </th>
+						       <th class="col-md-1 compareinput">.00</th>
+						       <td class="col-md-3 gbp">GBP</td>
+						       <td class="col-md-3"> <img src="../img/gbp.png" alt="GBP Logo" > </td>
+						      </tr>
+
+						      <tr>
+						       <th class="col-md-5"> <input type="text" class="form-control compareinput" id="usr" placeholder="1,70,000" > </th>
+						       <th class="col-md-1 compareinput">.00</th>
+						       <td class="col-md-3 gbp">INR</td>
+						       <td class="col-md-3"> <img src="../img/inr.png" alt="GBP Logo" > </td>
+						      </tr>
+
+						       <tr>
+						      
+						       <td  colspan="5" class="homecal1">Transfer fee : 10.00 GBP | Rate : 1GBP = 75.00 INR</td>
+						       
+						      </tr>
+						      <tr>
+						      	<td  colspan="5" class="homecal1"><b>SAFE &amp; SECURE  |  LOW COST  |  FAST  |  CONVENIENT</b>
+						      	<div class="col-md-12">
+						      		<a href="login.html" ><button class="btn proceed" type="button">Proceed</button></a>
+						      	</div>
+						      	</td>
+						      </tr>
+
+						      
+ 
+						     
+						    </tbody>
+						  </table>
+						  </div>
+						  <!-- ./panel-body -->
+						 </div>
+
+						 <!-- ./panel -->
+						</div>
+
+           	    <!-- ./col-md-9 -->
+           	    </div>
+              
+           	<!-- ./col-md-6 -->
+           	</div>
+
+           	</div>
+    			  	<!--./container-fluid  -->
+    			  </div>
+    		</section>
+    	</header>
+    
+				
+    
+    
+    
+				<!-- Three Div Starts -->
+
+					<div class="container-fluid three">
+						<div class="container">
+							<div class="col-md-12 threediv" align="center" >
+								<div class="col-md-3 thrediv2">
+									<div>
+										<i class="fa fa-shield fa-5x fafafa" aria-hidden="true"></i>
+									</div>
+									<h1 class="thrediv1">SAFE & SECURE</h1>
+									<p>Uses industry leading security standards.</p>
+								</div>
+								<div class="col-md-3 thrediv2">
+									<div>
+										<i class="fa fa-money fa-5x fafafa" aria-hidden="true"></i>
+									</div>
+									<h1 class="thrediv1">LOW COST</h1>
+									<p>Low fees and competitive exchange rates.</p>
+								</div>
+								<div class="col-md-3 thrediv2">
+									<div>
+										<i class="fa fa-bolt fa-5x fafafa" aria-hidden="true"></i>
+									</div>
+									<h1 class="thrediv1">FAST</h1>
+									<p>Instant transfer to many countries. Receive notification by email.</p>
+								</div> 
+									<div class="col-md-3 thrediv2">
+									<div>
+										<i class="fa fa-mobile fa-5x fafafa" aria-hidden="true"></i>
+									</div>
+									<h1 class="thrediv1">CONVENIENT</h1>
+									
+									<p>24/7 Service – Available on computer & smartphone. You can also call us to make a transfer.</p>
+								</div> 
+							</div>
+						</div>
+					</div>	
+
+				<!-- Three Div ends -->
+    
+    
+    
+    
+				<!-- Services Section start -->
+				<section id="ABOUTUS" class="aboutmain">
+					<div class="container ">
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h2 class="section-heading">About Us</h2>
+							</div>
+						</div>
+						<div class="container " align="justify">
+						<h3 class="aboutpara" >Crosspay is a digital payments company, the founders of which have also pioneered and started a number of money transfer products that are currently widely used in the industry today. The senior management of Crosspay collectively has over 25 years’ experience in the payments, remittance and foreign exchange industry, so we know what we are doing! <br> <br> Crosspay enables individuals and corporates to make overseas payments for personal as well as business needs; using their smartphone, tablet, computer or even by calling our dedicated team. We provide extremely competitive rates and charges, and we give a personalised service to all our customers.<br> <br> Our service is available to senders in 15 countries and transfers can be made to over 100 countries globally and these numbers are fast growing!</h3>
+						</div>
+					</div>
+				</section>
+			<!-- Services Section end -->
+
+
+
+		   <!-- why crosspay section start -->
+					 <section id="WHYUS" >
+							<div class="container ">
+								<div class="row">
+									<div class="col-lg-12 text-center">
+										<h2 class="section-heading"></h2>
+									</div>
+								</div>
+								<div class="container ">
+								<div class="col-md-12">
+									<div class="col-md-5" align="justify"> 
+										<h2 class="section-heading">Why US ?</h2>
+										<h3 class="aboutpara" ><b>SAFE & SECURE</b> - Uses industry leading security standards. </h3>
+										<h3 class="aboutpara" > <b>LOW COST </b> - Low fees and competitive exchange rates.</h3>
+										<h3 class="aboutpara" ><b>FAST</b> - Instant transfer to many countries. Receive notification by email. </h3>
+										<h3 class="aboutpara" ><b>CONVENIENT</b> - 24/7 Service – Available on computer & smartphone. You can also call us to make a transfer. </h3>
+									</div>
+									<div class="col-md-1"></div>
+									<div class="col-md-6"> 
+									<img src="../img/crosspayvideo.png" class="img-responsive" alt="Responsive image">
+									</div>
+								</div>
+								</div>
+							</div>
+						</section>
+		   <!-- why crosspay section end -->
+
+   
+   
+   
+   
+   
+   
+				<!-- How Itworks Section start -->
+				<section id="HowItWorks" class="bg-light-gray"  >
+					<div class="container">
+						
+								<div class="col-md-12" align="center">
+									
+										<h2 class="section-heading">How It Works ?</h2>
+										<h3 class="thrediv112" ><b>3</b> Simple Steps </h3>
+										
+									
+								</div>
+
+							<div class="col-md-12 whydiv" align="center">
+							<div class="col-md-2"></div>
+									<div class="col-md-2 " >
+										<div class="howit">
+											<h1 class="thrediv1"><i class="fa fa-globe fa-3x"  aria-hidden="true"></i></h1>
+										</div>
+											<h3 class="countdiv11" >Choose  Country</h3>
+									</div>
+								<div class="col-md-1"></div>
+								<div class="col-md-2 " >
+										<div class="howit">
+											<h1 class="thrediv1"><i class="fa fa-user fa-3x" aria-hidden="true"></i> </h1>
+										</div>
+											<h3 class="countdiv11" >Choose Recipient </h3>	
+									</div>
+								<div class="col-md-1"></div>
+								
+								<div class="col-md-2 " >
+										<div class="howit">
+											<h1 class="thrediv1"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></h1>
+										</div>
+											<h3 class="countdiv11" >Confirm & Pay</h3>	
+									</div>
+							</div>
+					</div>
+				</section>
+				<!-- How Itworks  Section end-->
+   
+   				
+   
+   					
+				<!-- Services Section start -->
+				<section id="" class="countdiv" >
+					<div class="container ">
+						<div class="col-md-12 counting">
+							<div class="col-md-6 " >
+								<h2 class="thrediv123">Choose How To Pay</h2><br>
+									
+							<h3 class="countdiv16"><i class="fa fa-credit-card facolor"  aria-hidden="true"></i>  <b>Credit Card</b></h3>
+							<h3 class="countdiv16"><i class="fa fa-credit-card facolor" aria-hidden="true"></i> <b>Debit Card</b> </h3>
+							<h3 class="countdiv16"><i class="fa fa-university facolor" aria-hidden="true"></i> <b>Bank Transfer</b> </h3>
+							<h3 class="countdiv16"><i class="fa fa-volume-control-phone facolor1" aria-hidden="true"></i> <b>IVR</b></h3>
+							</div>
+							<div class="col-md-6 couuuunt" align="center">
+								
+								<div class="col-md-6">
+									<h1 class="countdiv1"><b>25+</b></h1>
+									<h2 class="countdiv11">Years of Industry Experience</h2>
+								
+								</div>
+								<div class="col-md-6">
+									<h1 class="countdiv1"><b>100+</b></h1>
+									<h2 class="countdiv11">Countries <br> Supported</h2>
+									
+								</div>
+								<div class="col-md-6 ">
+									<h1 class="countdiv1"><b>50+</b></h1>
+									<h2 class="countdiv11"> Countries Service <br> Available  </h2>
+									
+								</div>
+								<div class="col-md-6 ">
+									<h1 class="countdiv1"><b>5000+</b></h1>
+									<h2 class="countdiv11">Happy Customers</h2>
+									
+								</div>
+							
+								
+							</div>
+						</div>
+						
+						
+					</div>
+				</section>
+			<!-- Services Section end -->
+
+   
+   
+   				
+   
+   				<!-- test Section start -->
+				<section id="FEATURES" class="mobilediv">
+					<div class="container ">
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<h2 class="section-heading">FEATURES</h2>
+							
+							<div class="features hvr-wobble-vertical">
+								<h2 class="thrediv1">WEBSITE</h2>
+								<p class="aboutpara">Send money online through our website</p>
+							</div>
+							
+							
+						<div class="features hvr-wobble-vertical">	
+							<h2 class="thrediv1">MOBILE APP</h2>
+							<p class="aboutpara">Send money through our app from your smartphone or tablet</p>
+						</div>	
+						<div class="features hvr-wobble-vertical">
+							<h2 class="thrediv1">TELEPHONE</h2>
+							<p class="aboutpara">Send money by calling our call centre</p>
+						</div>
+							
+							
+						</div>
+						<div class="col-md-6">
+							<img src="../img/features.png" class="img-responsive" alt="Responsive image">
+							<!--<img src="pages/img/android.png" class="img-responsive" alt="Responsive image">
+							<img src="pages/img/ios.png" class="img-responsive" alt="Responsive image">-->
+						</div>
+						<div class="col-md-12">
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="col-md-6">
+									<img src="../img/android.png" class="img-responsive" alt="Responsive image">
+								</div>
+								<div class="col-md-6">
+									<img src="../img/ios.png" class="img-responsive" alt="Responsive image">
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</section>
+			<!-- test Section end -->
+   
+   
+   
+   
+   
+
+			<!-- testimonials section start-->
+			<!--<section id="Testimonials" class="testm">
+				<div class="container ">
+						<div class="row">
+							<div class="col-lg-12 text-center">
+							<h2 class="section-heading">Testimonials</h2>
+							</div>
+						</div>
+					<div class="col-md-12">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-md-12" align="center">
+									<div class="col-md-6">
+										<img src="pages/img/3.jpg" class="img-circle" alt="">
+										<h1 class="thrediv1">Lorem Ipsum</h1>
+										<p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+									</div>
+									<div class="col-md-6">
+										<img src="pages/img/3.jpg" class="img-circle" alt="">
+										<h1 class="thrediv1">Lorem Ipsum</h1>
+										<p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="col-md-12" align="center">
+								<div class="col-md-6">
+									<img src="pages/img/2.jpg" class="img-circle" alt="">
+									<h1 class="thrediv1">Lorem Ipsum</h1>
+									<p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+								</div>
+								<div class="col-md-6">
+									<img src="pages/img/2.jpg" class="img-circle" alt="">
+									<h1 class="thrediv1">Lorem Ipsum</h1>
+									<p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="col-md-12" align="center">
+									<div class="col-md-6">
+										<img src="pages/img/1.jpg" class="img-circle" alt="">
+										<h1 class="thrediv1">Lorem Ipsum</h1>
+										<p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+									</div>
+									<div class="col-md-6">
+										<img src="pages/img/1.jpg" class="img-circle" alt="">
+										<h1 class="thrediv1">Lorem Ipsum</h1>
+										<p class="comment"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</section>-->
+
+			<!-- testimonials section end-->
+   
+   
+   
+   		
+   			<!-- contact section start-->
+  			 <section id="CONTACT" class="contactdiv">
+					<div class="container ">
+					<div class="col-md-12">
+						<div class="col-md-5">
+						 <!--<img src="img/logo.png" alt="logo">-->
+							
+							
+							<h1 class="thrediv1">Contact Us</h1>
+							<br><br>
+							<p align="left" class="countdiv2">Call us: +44 (0) 203 096 2255 </p>
+							<p align="left" class="countdiv2">Email us: info@crosspayments.com   </p>
+						</div>
+						<div class="col-md-7" align="center">
+							<h1 class="thrediv1">Get In Touch With Us</h1>
+								<form class="form-inline" method="post" action="#" onSubmit="return Validate ();">
+								<div class="col-md-12">
+									
+									<span id="Firstname_error" style="color: red;"></span>
+									<span id="Email_error" style="color: red;"></span>
+									<span id="Mobileno_error" style="color: red;"></span>
+									<span id="Subject_error" style="color: red;"></span>
+									<span id="Message_error" style="color: red;"></span>
+									
+								</div>
+								
+									<div class="col-md-6">
+									
+										<input type="text" class="Contact" id="Firstname" placeholder="Full Name">
+										
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="Contact" id="Email" placeholder="Email">
+									</div>
+									<div class="col-md-6" >
+										<input type="text" class="Contact" id="Mobileno" placeholder="Phone Number">
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="Contact" id="Subject" placeholder="Subject">
+									</div>
+									<div class="col-md-12" align="center">
+										<input type="text" class="Contact1" id="Message"  placeholder="Message">
+									</div>
+									<div>
+										<button type="submit" class="btn btn-lg contact2">Send</button>
+									</div>
+
+								</form>
+							
+						</div>
+					</div>
+					</div>
+				</section>
+  	 <!-- contact section end-->
+
+   <!--/footer start  -->
+    <footer class="footerr">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-6">
+                  <span class="copyright1">Copyright &copy; CrossPayments 2017</span>
+                </div>
+                <div class="col-md-3">
+                  
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!--/footer start  end-->
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" ></script> -->
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/agency.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+   
+    
+<!-- ./contact us vaidation -->
+ 
+ <script>
+ function Validate ()
+  {
+   
+   /*alert('fdfe');*/
+  var Firstname=$("#Firstname").val();
+  var Email=$("#Email").val(); 
+  var Mobileno=$("#Mobileno").val();
+  var Subject=$("#Subject").val();
+  var Message=$("#Message").val(); 
+   
+   if(Firstname=='')
+    {
+     $("#Firstname_error").html("Please Enter Your  Name");
+     return false;
+     
+    }
+    else
+    {
+     $("#Firstname_error").html("");
+    }
+   
+   
+   if(Email=='')
+    {
+     $("#Email_error").html("Please Enter Your Email ID");
+     return false;
+     
+    }
+    else
+    {
+     $("#Email_error").html("");
+    }
+    if(Email!='' && !test_email.test(Email))
+				{
+					$("#Email_error").html("Enter valid Email Address");
+					return false;
+					
+				}
+				else
+				{
+					$("#Email_error").html("");
+				}  
+   
+   if(Mobileno=='')
+    {
+     $("#Mobileno_error").html("Please Enter Your Mobile Number");
+     return false;
+     
+    }
+    else
+    {
+     $("#Mobileno_error").html("");
+    }
+   
+   if(Subject=='')
+    {
+     $("#Subject_error").html("Please Enter Subject");
+     return false;
+     
+    }
+    else
+    {
+     $("#Subject_error").html("");
+    }
+   
+   if(Message=='')
+    {
+     $("#Message_error").html("Please Enter Message");
+     return false;
+     
+    }
+    else
+    {
+     $("#Message_error").html("");
+    }
+   
+  }
+ 
+  
+  
+ </script>
+ <!-- ./contact us -->
+</body>
+
+</html>

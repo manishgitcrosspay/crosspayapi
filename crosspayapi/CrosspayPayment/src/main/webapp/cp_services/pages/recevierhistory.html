@@ -1,0 +1,113 @@
+<script>
+      $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
+
+  </script>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+           <div class="row">
+               
+               <div class="col-md-12">
+                    <div class="page-header" style="font-size: 16px; font-family: Roboto;font-weight: bold;">Transaction Details</div>
+                </div>
+
+               <!--./row -->
+           </div>
+          <div class="row">
+          <div class="col-md-3">{{profileDatas}}</div>
+           <div class="col-md-6">
+                 <table class="table table-striped">
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <th>Transaction Number</th>
+                                            <td ng-if="txn_no">{{txn_no}}</td>
+                                             <td ng-if="!txn_no">{{order_id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Receiver Name</th>
+                                            <td>{{name}}</td>
+                                          
+                                        </tr>
+                                        <tr ng-if="country">
+                                            <th>Country</th>
+                                            <td>{{country}}</td>
+                                        </tr>
+                                        <tr ng-if="city">
+                                            <th>City</th>
+                                            <td>{{city}}</td>
+                                        </tr> 
+                                        <tr ng-if="accout_num">
+                                            <th>Account Number</th>
+                                            <td>{{accout_num}}</td>
+                                          
+                                        </tr>
+                                        <tr ng-if="ifsc">
+                                            <th>IFS Code</th>
+                                            <td> {{ifsc}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Transaction Date</th>
+                                            <td>{{txn_date}} </td>
+                                        </tr>
+           <tr>
+                                            <th>Pay Out</th>
+                                            <td >{{payee_amount | number:2}}<span ng-if="account_ccycode=='GBP'">GBP</span><span ng-if="account_ccycode=='INR'">  INR</span></td>
+                                        </tr>
+          
+           <tr>
+                                            
+                                            <th>Rate</th>
+                                            <td >1<span ng-if="payin_ccycode=='GBP'"> GBP</span>
+                                            <span ng-if="payin_ccycode=='INR'"> INR</span> = {{rate}}<span ng-if="account_ccycode=='GBP'"> GBP</span>
+                                            <span ng-if="account_ccycode=='INR'"> INR</span></td>
+                                        </tr>
+          
+                                        <tr>
+                                            <th>Pay In</th>
+                                            <td >{{payin_amount | number:2}}<span ng-if="payin_ccycode=='GBP'"> GBP</span>
+                                            <span ng-if="payin_ccycode=='INR'"> INR</span></td>
+                                        </tr>
+          
+           <tr>
+                                            
+                                            <th>Transfer Fee</th>
+                                            <td >{{commission | number:2}}  <span ng-if="payin_ccycode=='GBP'"> GBP</span>
+                                            <span ng-if="payin_ccycode=='INR'"> INR</span></td>
+                                        </tr>
+                                       
+                                       
+                                       <tr>
+                                            <th>Total Order Amount</th>
+                                            <td >{{total_amount | number:2}}<span ng-if="payin_ccycode=='GBP'"> GBP</span>
+                                            <span ng-if="payin_ccycode=='INR'"> INR</span></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table> 
+        
+         <div class="col-md-12" align="center">
+                        
+                      <!--   <a  ng-click="showCash(ifscCode,bankName,accountNumber,perticular_benef,selectedName)" ng-if="radiotype==Bank"><button class="btn proceed" type="submit">Dashboard</button></a> -->
+                       
+                
+                    </div>
+                                </div>  
+                                <div class="col-md-3"></div>       
+
+              <!-- ./row -->
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>

@@ -1,0 +1,208 @@
+<script>
+      $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
+
+  </script>
+  <style>
+.drop-down { 
+ position: relative;  
+ display: inline-block;    
+ width: auto;       
+ margin-top: 0;
+ font-family: verdana;    
+ }      
+ .drop-down select {   
+ display: none;    
+ }      
+ .drop-down .select-list {  
+	background-color: #FFF;
+	border: 1px solid #CCC;	
+	 position: absolute;     
+	 top: 0;      
+	 left: -1px;
+	 z-index: 1;    
+	 margin-top: 49px;
+	 padding: 0;
+ }    
+ .drop-down .select-list li {
+	 display: none;
+	 list-style-type: none;
+    padding: 10px;
+ }    
+ .drop-down .select-list li span, .drop-down .button span {  
+ display: inline-block;      
+ min-height: 40px;        
+ min-width: 130px;      
+/* width: 100%;*/
+ height:40px !important;   
+ padding: 3px 0px 0px 2px;     
+/* background-color: #fff;*/
+ background-position: left 53px center; 
+ background-size: 48%;  
+ background-repeat: no-repeat;       
+ /*font-size: 16px;       */
+ text-align: left;       
+ color: #000;        
+ /*opacity: 0.7;      */
+ box-sizing: border-box;     
+ }     
+ /*.drop-down .select-list li span:hover,  */
+ .drop-down .select-list li span:focus {     
+ opacity: 1;     
+ } 
+#focusedDropdown {
+    height: 50px !important; font-size: 24px;
+     font-family: 'Roboto';
+        font-weight: bold;
+        padding-left: 5px;
+        color: #162334;
+        margin-right: 319px;
+        width: 150px;
+        margin-bottom: 5px;
+        text-align: justify;
+        cursor: default;
+
+  }
+  
+  </style>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+             <div class="row">
+                <div class="col-lg-12">
+                   <div class="page-header" style="font-size: 20px;font-weight: bold;"> Dashboard</div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+                    <div class="well col-lg-12">
+                        <div class= "col-lg-6">
+          
+    <p><b>Please enter the amount you would like to send in either GBP or destination currency and select the service type.</b></p>
+    </div>
+    <!-- /.col-lg-6 -->
+             <div class= "col-lg-6">
+
+             <div class="input-group below24 bias-input-group" >
+
+                         <input type="text" ng-pattern-restrict="^(?:[0-9]+(?:\.[0-9]{0,2})?)?$" class="form-control" ng-change="getRate(rate,firstDrop,secondDrop)" ng-model="rate"  name="custom_name" placeholder="0" id="focusedInput">
+
+                          <div class="input-group-btn bs-dropdown-to-select-group">
+                            <button type="button" class="btn btn-default dropdown-toggle as-is bs-dropdown-to-select" data-toggle="dropdown" tabindex="-1" id="focusedDropdown">
+                        <span data-bind="bs-drp-sel-label">  GBP <img src="img/gbp.png" alt="logo" style="width: 61px;" class="immm"></span>
+                                <input type="hidden" name="country_path"  data-bind="bs-drp-sel-value" value="USD" >
+                               <!-- <span class="caret"></span>-->
+                               <!-- <span class="sr-only">Toggle Dropdown</span>-->
+                            </button>
+                            <!--<ul class="dropdown-menu" role="menu" >
+                           
+       <li data-value="INR"><a href="#">INR </a></li>
+       <li data-value="UK"><a href="#">UK </a></li>
+                            
+                            </ul>-->
+                          </div>
+                        </div>  
+            <!-- /.col-lg-6 -->
+
+              <div  style="padding-top: 4px; padding-bottom: 8px;" ng-if="RateData.ccyfrom">Rate &nbsp;:&nbsp;&nbsp;1 {{RateData.ccyfrom}} = {{RateData.INR}}&nbsp;&nbsp; {{RateData.ccyto}}</div>
+              </div>
+   			
+              <div class= "col-lg-6"></div>
+              <div class= "col-lg-6">
+             <div class="input-group below24 bias-input-group" >
+                         <input type="text" ng-pattern-restrict="^(?:[0-9]+(?:\.[0-9]{0,2})?)?$"  class="form-control" ng-change="getRateReverse(rate1,firstDrop,secondDrop)" ng-model="rate1"  name="custom_name1" placeholder="0" id="focusedInput">
+                          <div class="input-group-btn bs-dropdown-to-select-group">
+                                  <div class="drop-down btn btn-default dropdown-toggle as-is bs-dropdown-to-select" id="focusedDropdown" >
+									<input type="hidden" value="{{firstDrop}}" ng-model="firstDrop" id="hidd" />
+                                     <select name="options" id="flagDrop">     
+                                     <option class="en" value="INR" 
+                                     style="background-image:url('img/inr.png');background-size: 48%;width: 100%;">INR</option>        
+                                     <option class="fr" value="PHP"
+                                     style="background-image:url('img/php.png');background-size: 48%;">PHP</option>    
+                                     <option class="nl" value="USD"
+                                     style="background-image:url('img/us.png'); background-size: 48%;">USD</option>    
+                                     </select>     
+                                     </div> 
+
+                          </div>
+                        </div>  
+            <!-- /.col-lg-6 -->
+   <div class= "col-lg-12">
+
+     <div class= "col-lg-3"></div>
+   <div class= "col-lg-4" style="margin-top: 12px; text-align: center;" ><b>TRANSFER FEE</b></div>
+     <div class= "col-lg-2"></div></div>
+     
+   <div class= "col-lg-12" style="margin-top:15px;">
+   <div class="col-lg-12" >
+    <div class="col-lg-4">Cash Pay-Out</div><div class="col-lg-2" style="margin-left:4px;">|</div>
+    <div class="col-lg-4" style="text-align:right">Account Credit</div>
+   </div>
+   <div class="col-lg-12">
+    <div class="col-lg-4"><b>{{RateData.cashcommission}} {{RateData.ccyfrom}}</b></div><div class="col-md-2"></div>
+    <div class="col-lg-4" style="text-align:right"><b>{{RateData.commission}} {{RateData.ccyfrom}}</b></div>
+   </div>
+      </div>
+   
+            <!-- <div >Transfer Fee : {{RateData.commission}} {{RateData.ccyfrom}}</div>
+   <div style="margin-top: 12px;">Cash Transfer Fee : {{RateData.cashcommission}} {{RateData.ccyfrom}}</div>
+             -->
+            
+<!--             <a href="select_receiver.html"><button type="button" class="btn btn-info btn-lg col-sm-4 col-sm-push-3">Proceed</button></a>  <br><br>-->
+              <div class="col-lg-12">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-8"><a><button  style="margin-top: 26px;" class="btn proceed btn-lg col-md-offset-2" type="button" ng-click="checkRate(finalrate,RateData)" >Proceed</button></a></div>
+              <div class="col-lg-3"></div>
+              </div> 
+              </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+ </div>
+ <script>
+  jQuery().ready(function() { 
+      /* Custom select design */ 
+      // function sendref(rate,ref){
+      //     jQuery('#hidd').val(rate);
+      //     jQuery('#hidd').attr('ref',ref);
+      // }
+
+      jQuery('.drop-down').append('<div class="button"></div>');    
+      jQuery('.drop-down').append('<ul class="select-list"></ul>');    
+      jQuery('.drop-down select option').each(function() {
+        var bg = jQuery(this).css('background-image');    
+        jQuery('.select-list').append('<li class="clsAnchor"><span value="' + jQuery(this).val() + '" class="' + jQuery(this).attr('class') + '" style=background-image:' + bg + '>' + jQuery(this).text() + '</span></li>');   
+      });    
+      jQuery('.drop-down .button').html('<span style=background-image:' + jQuery('.drop-down select').find(':selected').css('background-image') + '>' + jQuery('.drop-down select').find(':selected').text() + '</span>' + '<a href="javascript:void(0);" class="select-list-link" style="margin-left:-5%; color:black;" ><i class="fa fa-caret-down" aria-hidden="true"></i></a>');   
+      jQuery('.drop-down ul li').each(function() {   
+          if (jQuery(this).find('span').text() == jQuery('.drop-down select').find(':selected').text()) {  
+              jQuery(this).addClass('active'); 
+            }      
+      });     
+      jQuery('.drop-down .select-list span').on('click', function(){
+          var dd_text = jQuery(this).text();  
+          var dd_img = jQuery(this).css('background-image'); 
+          var dd_val = jQuery(this).attr('value');
+          jQuery('.drop-down .button').html('<span style=background-image:' + dd_img + '>' + dd_text + '</span>' + '<a href="javascript:void(0);" class="select-list-link" style="margin-left:-5%; color:black;"><i class="fa fa-caret-down" aria-hidden="true"></i></a>');      
+          jQuery('.drop-down .select-list span').parent().removeClass('active');    
+          jQuery(this).parent().addClass('active');     
+          $('.drop-down select[name=options]').val( dd_val ); 
+          $('.drop-down .select-list li').slideUp();
+          var firstVal = jQuery("#hidd").val();
+          var secondVal = jQuery("input[name='custom_name1']").val();
+		  angular.element(document.getElementById('flagDrop')).scope().secondDrop=dd_val;
+          angular.element(document.getElementById('flagDrop')).scope().getRateReverse(secondVal,firstVal,dd_val);
+      });       
+      jQuery('.drop-down .button').on('click','a.select-list-link', function(){      
+        jQuery('.drop-down ul li').slideToggle();  
+      });     
+/* End */       
+});
+ </script>

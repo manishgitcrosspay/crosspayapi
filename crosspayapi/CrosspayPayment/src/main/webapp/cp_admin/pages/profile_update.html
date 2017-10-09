@@ -1,0 +1,489 @@
+  <style>
+      .error{color: red;}   
+</style>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <form name="PUpdate" class="PUpdate"> 
+                <input type="hidden" value="{{user_id}}" name="user_id">
+                <input type="hidden" value="+44" name="countrycode">
+                
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header" style="font-size: 16px; font-family: Roboto;font-weight: bold;">Update Profile</div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+              
+                          <div class="col-md-12" align="center">
+
+                                
+                                <span id="Fname_error" class="error"></span>
+                                <span id="Mname_error" class="error"></span>
+                                <span id="Lname_error" class="error"></span>
+                                <span id="Email_error" class="error"></span>
+                                <span id="Phone_error" class="error"></span>
+                                <span id="Mobile_error" class="error"></span>
+                                <span id="DOB_error" class="error"></span>
+                                <span id="Gender_error" class="error"></span>
+                                <span id="Nationlity_error" class="error"></span>
+                                <span id="IDProof_error" class="error"></span>
+                                <span id="IdNumber_error" class="error"></span>
+                                <span id="IssedBy_error" class="error"></span>
+                                <span id="IssudDate_error" class="error"></span>
+                                <span id="IdExp_error" class="error"></span>
+                                <span id="Country_error" class="error"></span>
+                                <span id="State_error" class="error"></span>
+                                <span id="Zipcode_error" class="error"></span>
+                                <span id="Address1_error" class="error"></span>
+                                <span id="Address2_error" class="error"></span>
+                
+
+                          </div>
+              
+               
+                       
+                       <div class="row">
+                    
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <lable class="form-label">First Name</lable>
+                                        <input class="form-control" id="Fname" type="text" name="firstname" value=" {{profileData.data[0].first_name}}" />
+                                    </div>    
+                                </div>
+ 
+                                  
+                       
+                       
+                       
+                       
+                                
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <lable class="form-label">Middle Name</lable>
+                                            <input class="form-control" id="Mname" type="text" name="middlename" value=" {{profileData.data[0].middle_name}}" />
+                                        </div>    
+                                    </div>
+                       
+                       
+                       
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <lable class="form-label">Last Name</lable>
+                                            <input class="form-control" id="Lname" type="text" name="lastname" value=" {{profileData.data[0].last_name}}" />
+                                        </div>    
+                                    </div>
+                   </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Email</lable>
+                                <input class="form-control" id="Email" type="text" name="email" value=" {{profileData.data[0].email}}" />
+                            </div>    
+                        </div>
+                    
+           
+                        <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Phone Number</lable>
+                                <input class="form-control" id="Phone" type="text" name="phone" value=" {{profileData.data[0].phone_num}}" />
+                            </div>    
+                        </div>
+           
+           
+                        <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Mobile Number</lable>
+                                <input class="form-control" id="Mobile" type="text" name="mobile" value=" {{profileData.data[0].mobile}}" />
+                            </div>    
+                        </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                   
+                   <div class="row">
+                        <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Date Of Birth</lable>
+                                <input class="form-control" id="DOB" type="text" name="dateofbirth" value=" {{profileData.data[0].dob}}" />
+                            </div>    
+                        </div>
+            
+        
+                            <div class=" col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">Gender</lable>
+                                    <input class="form-control" id="Gender" type="text" name="gender" value=" {{profileData.data[0].gender}}" />
+                                </div>    
+                            </div>
+           
+           
+           
+                        <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Nationlity</lable>
+                                <input class="form-control" id="Nationlity" type="text" name="nationality" value=" {{profileData.data[0].nationality}}" />
+                            </div>    
+                        </div>
+                    </div>
+                   <!-- <div class="hr-line-dashed"></div>-->
+                  <!-- <div class="row">
+                    <div class=" col-md-4">
+                                    <div class="form-group">
+                                        <lable class="form-label">ID Proof Type</lable>
+                                        <input class="form-control" id="IDProof" type="text" value="UK ID Card " />
+                                    </div>    
+                                </div>
+                       
+           
+                                <div class=" col-md-4">
+                                    <div class="form-group">
+                                           <lable class="form-label">ID Proof Number</lable>
+                                           <input class="form-control" id="IdNumber" type="text" value="F1383359552ON31016" />
+                                    </div>    
+                                </div>
+            
+            
+                                     <div class=" col-md-4">
+                                        <div class="form-group">
+                                              <lable class="form-label">Issued By</lable>
+                                               <input class="form-control" id="IssedBy" type="text" value="UK" />
+                                        </div>    
+                                    </div>
+                    </div>-->
+                    <!--<div class="hr-line-dashed"></div>-->
+                      
+                       <!--<div class="row">
+                                 <div class=" col-md-4">
+                                    <div class="form-group">
+                                          <lable class="form-label">Issued Date</lable>
+                                           <input class="form-control" id="IssudDate" type="text" value="26-Jul-2005" />
+                                    </div>    
+                                </div>
+
+                              <div class=" col-md-4">
+                                <div class="form-group">
+                                      <lable class="form-label">Expiry Date</lable>
+                                       <input class="form-control" id="IdExp" type="text" value="XXXXX" />
+                                </div>    
+                             </div>
+
+                     
+                 <div class=" col-md-4">
+                        <div class="form-group">
+                               <lable class="form-label">ID proof</lable>
+                               <input class="form-control" type="file" value="" />
+                        </div>    
+                    </div>
+              </div>-->
+              <div class="hr-line-dashed"></div>
+              <div class="row">
+                     <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Country</lable>
+                                <input class="form-control" id="Country" type="text" name="country" value=" {{profileData.data[0].country}}" />
+                            </div>    
+                        </div> 
+            
+                    <div class=" col-md-4">
+                        <div class="form-group">
+                            <lable class="form-label">County</lable>
+                            <input class="form-control" id="State" type="text" name="state" value=" {{profileData.data[0].state}}" />
+                            <input type="hidden" value="{{profileData.data[0].state}}" name="city">
+                        </div>    
+                    </div>
+           
+           
+                    <div class=" col-md-4">
+                        <div class="form-group">
+                            <lable class="form-label">Zip Code</lable>
+                            <input class="form-control" id="Zipcode" type="text" name="pincode" value=" {{profileData.data[0].pincode}}"  />
+                        </div>    
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="row">
+                    
+                                        <div class=" col-md-6">
+                                            <div class="form-group">
+                                               <lable class="form-label">Addrees 1</lable>
+                                               <textarea class="form-control" id="Address1" name="address1" type="text"> {{profileData.data[0].address1}}</textarea> 
+
+                                            </div>    
+                                      </div>
+                  <div class=" col-md-6">
+                        <div class="form-group">
+                               <lable class="form-label">Addrees 2</lable>
+                               <textarea class="form-control" id="Address2"  name="address" type="text"> {{profileData.data[0].address2}}</textarea> 
+                         </div>    
+                 </div>
+             </div>
+             <div class="hr-line-dashed"></div>
+
+             <button type="submit" class="btn btn-info btn-lg col-md-offset-6" ng-click="updateProfile();">Save</button>
+            <!-- /.form -->
+       
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+ </form>
+    </div>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+             $('.form-control').focusout(function() {
+            $('.form-group').removeClass('focus');
+        });
+        $('.form-control').focus(function() {
+            $(this).closest('.form-group').addClass('focus');
+        });
+
+            /// Input Kepress Filled  Focus
+    $('.form-control').keyup(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    });
+
+    /// Input Check Filled Focus
+    var $formControl = $('.form-control');
+    var values = {};
+    var validate =    $formControl.each(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    }); 
+    })
+</script>
+  
+   <script>
+    function ValidatE () {
+        var Country=$("#Country").val();
+        var State =$("#State").val();
+        var Zipcode=$("#Zipcode").val();
+        var Fname=$("#Fname").val();
+        var Mname=$("#Mname").val();
+        var Lname=$("#Lname").val();
+        var Email=$("#Email").val();
+        var Phone=$("#Phone").val();
+        var Mobile=$("#Mobile").val();
+        var DOB=$("#DOB").val();
+        var Gender=$("#Gender").val();
+        var Nationlity=$("#Nationlity").val(); 
+        var IDProof=$("#IDProof").val();
+        var IdNumber=$("#IdNumber").val();
+        var IssedBy=$("#IssedBy").val();
+        var IssudDate=$("#IssudDate").val();
+        var IdExp=$("#IdExp").val();
+        var Address1=$("#Address1").val();
+        var Address2=$("#Address2").val();
+        
+        
+    
+    if(Fname=="")
+            {
+                $("#Fname_error").html("Please Enter Your First Name");
+                return false;
+                
+            }else{
+                
+                $("#Fname_error").html("");
+            }
+    
+    
+    if(Mname=="")
+            {
+                $("#Mname_error").html("Please Enter Your Middle Name");
+                return false;
+                
+            }else{
+                
+                $("#Mname_error").html("");
+            }
+    
+    if(Lname=="")
+            {
+                $("#Lname_error").html("Please Enter Your Last Name");
+                return false;
+                
+            }else{
+                
+                $("#Lname_error").html("");
+            }
+    if(Email=="")
+            {
+                $("#Email_error").html("Please Enter Your Email");
+                return false;
+                
+            }else{
+                
+                $("#Email_error").html("");
+            }
+    if(Phone=="")
+            {
+                $("#Phone_error").html("Please Enter Your Phone Number");
+                return false;
+                
+            }else{
+                
+                $("#Phone_error").html("");
+            }
+    if(Mobile=="")
+            {
+                $("#Mobile_error").html("Please Enter Your Mobile Number");
+                return false;
+                
+            }else{
+                
+                $("#Mobile_error").html("");
+            }
+    
+    if(DOB=="")
+            {
+                $("#DOB_error").html("Please Enter Your Date Of Birth");
+                return false;
+                
+            }else{
+                
+                $("#DOB_error").html("");
+            }
+    
+    if(Gender=="")
+            {
+                $("#Gender_error").html("Please Enter Your Gender");
+                return false;
+                
+            }else{
+                
+                $("#Gender_error").html("");
+            }
+    
+    if(Nationlity=="")
+            {
+                $("#Nationlity_error").html("Please Enter Your Nationlity");
+                return false;
+                
+            }else{
+                
+                $("#Nationlity_error").html("");
+            }
+        
+        
+    if(IDProof=="")
+            {
+                $("#IDProof_error").html("Please Enter Your ID Proof Type");
+                return false;
+                
+            }else{
+                
+                $("#IDProof_error").html("");
+            }   
+        
+        if(IdNumber=="")
+            {
+                $("#IdNumber_error").html("Please Enter Your ID Proof Number");
+                return false;
+                
+            }else{
+                
+                $("#IdNumber_error").html("");
+            }
+        
+        
+        
+    if(IssedBy=="") 
+            {
+                $("#IssedBy_error").html("ID Issued By");
+                return false;
+                
+            }else{
+                
+                $("#IssedBy_error").html("");
+            }
+        
+    if(IssudDate=="") 
+            {
+                $("#IssudDate_error").html("ID Issued Date");
+                return false;
+                
+            }else{
+                
+                $("#IssudDate_error").html("");
+            }
+    
+    if(IdExp=="") 
+            {
+                $("#IdExp_error").html("ID Expired Date");
+                return false;
+                
+            }else{
+                
+                $("#IdExp_error").html("");
+            }
+
+            if(Country=="")
+            {
+                $("#Country_error").html("Please Enter Your Country");
+                return false;
+                
+            }else{
+                
+                $("#Country_error").html("");
+            }
+    
+    if(State=="")
+            {
+                $("#State_error").html("Please Enter Your State");
+                return false;
+                
+            }else{
+                
+                $("#State_error").html("");
+            }
+    if(Zipcode=="")
+            {
+                $("#Zipcode_error").html("Please Enter Your Zipcode");
+                return false;
+                
+            }else{
+                
+                $("#Zipcode_error").html("");
+            }
+
+    if(Address1=="") 
+            {
+                $("#Address1_error").html("Please Enter Your Current Address");
+                return false;
+                
+            }else{
+                
+                $("#Address1_error").html("");
+            }
+    if(Address2=="") 
+            {
+                $("#Address2_error").html("Please Enter Your Permanent Address");
+                return false;
+                
+            }else{
+                
+                $("#Address2_error").html("");
+            }
+    
+    
+    
+    
+    }
+    
+    </script>

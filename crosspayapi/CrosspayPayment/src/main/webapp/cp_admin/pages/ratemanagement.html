@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Crosspay | Rate Management</title>
+ <link href="style.css" rel="stylesheet">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <style >
+  
+  .field {
+    height: 35px;
+    font-size: 16px;
+    color: #000000;
+    font-family: Roboto;
+    border: 1px solid #324762;
+}
+      .amount {
+        text-align: right;
+      }
+      .date {
+        text-align: center;
+      }
+	  
+	  .space{
+		  margin-top: 20px;
+	  }
+	  
+  </style>
+</head>
+
+<body>
+
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+
+    <div id="wrapper">
+
+      
+
+        <div id="page-wrapper">
+            <div class="row">
+               <div class="col-md-12 page-header">
+                <div class="col-lg-9">
+                    <div class="" style='font-size:20px'><b>Rates</b></div>
+                </div>
+              <!--  <div class="col-lg-3 ">
+                <div class="topbuttons">
+					<a href="AddNewRate.html"><button type="button" class="btn adduser">Add New</button></a>
+              <button type="button" class="btn deactivate" data-toggle="modal" data-target="#deactivate">Deactivate</button>
+					</div>
+               </div>-->
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- /.row -->
+            <div class="row">
+                <form method="post" name="rateForm" ng-submit="updaterate(fromcurr,tocurr,InstrumentType,updateval)">
+              
+                <!--	<div class="col-md-12" align="center">
+                		
+                		<span id="Password_error" class="valstyle"></span>
+                		<span id="NPassword_error" class="valstyle"></span>
+                		<span id="CPassword_error" class="valstyle"></span>
+                        <span id="NPassword1_error" class="valstyle"></span>
+                        <span id="MPassword_error" class="valstyle"></span>
+                        
+                	</div>-->
+                
+              
+               
+                 <div class="col-md-12">
+               	<div class="col-md-8">
+               		
+               		
+						<div class=" col-md-5">
+							<div class="form-group">
+								<label class="form-label">From Currency</label>
+								<select class="form-control field" id="fromcurr" name="fromcurr" ng-change="ratemanagement(fromcurr,tocurr,InstrumentType)" ng-model="fromcurr">
+								<option value="">Select  Currency</option>
+								<option value="{{x.country}}" ng-repeat="x in rateDetailsfrom">{{x.country}}</option>
+															<!-- <option value=""> Select Currency</option>
+															<option value="UK">United Kingdom</option>
+															<option value="IRL">Ireland</option>
+															<option value="IND">India</option> -->
+															
+														</select>
+								<!-- <input class="form-control " id="FromCurrency" name="InstrumentType" type="text" /> -->
+							</div>    
+						</div>
+               
+                
+                            
+                                 
+					 <div class=" col-md-5">
+						<div class="form-group">
+							<label >To Currency</label>
+							<!-- <input class="form-control field" id="ToCurrency" name="tocurr" type="text" /> -->
+							<select class="form-control field" id="tocurr" name="tocurr" ng-change="ratemanagement(fromcurr,tocurr,InstrumentType)" ng-model="tocurr">
+								<option value="">Select Currency</option>
+								<option value="{{x.country}}" ng-repeat="x in rateDetailsto">{{x.country}}</option>
+							</select>
+						</div>    
+					</div>
+               
+               		
+               	</div>
+               		<div class="col-md-4"></div>
+               	
+               </div>
+			   
+			    <div class="col-md-12 space">
+               	<div class="col-md-8">
+               		
+               		
+						<div class=" col-md-5">
+							<div class="form-group">
+								<label class="form-label">Instrument Type</label>
+								<!-- <input class="form-control " id="InstrumentType" name="InstrumentType" type="text" /> -->
+								<select class="form-control field" id="InstrumentType" name="InstrumentType" ng-change="ratemanagement(fromcurr,tocurr,InstrumentType)" ng-model="InstrumentType">
+									<option value="">Select Instrument Type</option>
+									<option value="AC">Account Credit</option>
+									<option value="CP">Cash Payout</option>
+								</select>
+							</div>    
+						</div>
+					 <div class=" col-md-5">
+						<div class="form-group">
+							<label class="form-label">Value</label>
+							<input class="form-control field" id="updateval" name="updateval" type="text" valid-number ng-model="updateval"/>
+						</div>    
+					</div>
+               	</div>
+               		<div class="col-md-8"></div>
+               	
+               </div>
+               
+                <div class="col-md-12" align="center">
+                <div class="col-md-6">
+                	 <button class="btn proceed btn-lg" type="submit" style="padding:12px 25px 12px 25px;font-size:16px;">Update</button>
+                </div>
+                <div class="col-md-6"></div>
+           			</div>
+                       <!--<div class=" col-md-3">                         
+                            <div class="form-group">
+                                <lable class="form-label">From Currency</lable>
+                                <input class="form-control field" id="FromCurrency" name="FromCurrency" type="text"/>
+                            </div>
+                        </div>-->
+          </form>
+            <!-- /.row -->
+        </div>
+         <!-- /.form -->
+         <!-- /#page-wrapper -->
+		</div>
+    </div>
+       </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.js"></script>
+
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Material icons select dropdowns -->
+    <!-- <script src='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'></script>
+    <script src='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js'></script> -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+             $('.form-control').focusout(function() {
+            $('.form-group').removeClass('focus');
+        });
+        $('.form-control').focus(function() {
+            $(this).closest('.form-group').addClass('focus');
+        });
+
+         /// Input Kepress Filled  Focus
+    $('.form-control').keyup(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    });
+    });
+</script>
+
+</body>
+
+</html>

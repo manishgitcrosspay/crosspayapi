@@ -1,0 +1,180 @@
+<style>
+		.payment{
+			color: #233147;
+			font-family: Roboto;
+		}
+		.thedr{
+			
+			font-family: Roboto;
+			color: #FFFFFF;
+			font-size: 17px;
+			
+		}
+		.thedr1{
+			font-family: Roboto;
+			font-size: 17px;
+		
+		}
+	</style>
+<script>
+      $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
+
+  </script>
+  
+  
+  
+ <div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+
+
+    <div id="wrapper">
+
+     
+ <!-- Navigation -->
+        <nav >
+            
+
+           <!-- <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       
+                     
+                      
+                        
+                    </ul>
+                </div>-->
+                <!-- /.sidebar-collapse -->
+            <!--</div>-->
+            <!-- /.navbar-static-side -->
+        </nav>
+
+           
+
+        <div id="page-wrapper">
+        
+        
+
+				<div class="container-fluid">
+				
+				
+				 
+				  
+                               
+                               <div class="col-md-12" style="margin-top: 20px;"  ng-if="accountdetails=='Cash'">
+                                  <!--  <h2 class="payment">Cash Payment</h2> -->
+                                   <div class="page-header" style="font-size: 20px;font-weight: bold;"> Cash Payment
+                        
+                    </div>
+                                   
+                                 <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="thedr" style="background: #170D39;">
+                                            <th>Name</th>
+                                            <th>Country</th>
+                                            
+                                            <th>City</th>
+                                            <th>Mobile No</th>
+                                             <th>PayOut-Network</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="thedr1">
+                                            <td>{{beneficiary.first_name}} {{beneficiary.middle_name}} {{beneficiary.last_name}}</td>
+                                            <td>{{beneficiary.country}}</td>
+                                            <!--<td>{{beneficiary.state}}</td>-->
+                                            <td>{{beneficiary.city}}</td>
+                                            <td>{{beneficiary.mobile}}</td>
+                                            <td>{{agentname}}</td>
+                                        </tr>
+                                      
+                                    </tbody>
+                                </table>
+								</div>
+							</div>
+
+                                
+                                         
+                                                  
+                                                           
+                               <div class="col-md-12" style="margin-top: 20px;" ng-if="accountdetails=='Bank'">
+                                  <!--  <h2 class="payment">Bank Details</h2> -->
+                                    <div class="page-header" style="font-size: 20px;font-weight: bold;">Bank Details </div>
+                                 <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="thedr" style="background: #170D39;">
+                                            <th>Name</th>
+                                            <th>Country</th>
+                                            <th>IFSC</th>
+                                            <th>Account No</th>
+                                            <th>Mobile No</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="thedr1">
+                                            <td>{{beneficiary.first_name}} {{beneficiary.middle_name}} {{beneficiary.last_name}}</td>
+                                            <td>{{beneficiary.country}}</td>
+                                            <td>{{beneficiary.ifsc !='' ? beneficiary.ifsc : 'NA'}}</td>
+                                            <td>{{beneficiary.account_num !='' ? beneficiary.account_num : 'NA'}}</td>
+                                            <td>{{beneficiary.mobile}}</td>
+                                        </tr>
+                                      
+                                    </tbody>
+                                </table>
+								</div>
+							</div>                                          
+                                                                                      
+                           
+                                  
+                                         
+                       <div class="col-md-12" style="margin-top: 20px;">
+                                
+                                  	<!-- <h2 class="payment">Transaction Summary Details</h2> -->
+                                  <div class="page-header" style="font-size: 20px;font-weight: bold;">Transaction Summary Details </div>
+                                   
+                                 <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="thedr" style="background: #170D39;">
+                                            <th>Pay-In Amount = {{RateData.rate | number:2}} {{RateData.ccyfrom}}</th>
+                                            <th>Pay-Out Amount = {{RateData.TotalRate | number:2}} {{RateData.ccyto}}</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="thedr1">
+                                            <td>Rate</td>
+                                            <td>1 {{RateData.ccyfrom}} = {{RateData.INR}} {{RateData.ccyto}}</td>
+                                        </tr>
+                                         <tr class="thedr1"></tr>
+                                          
+                                        
+                                        <tr class="thedr1">
+                                            <td>Transfer Fee In GBP</td>
+                                            <td>{{accountdetails=='Cash'?(RateData.cashcommission | number:2):(RateData.commission | number:2)}} {{RateData.ccyfrom}}</td>
+                                        </tr>
+                                        
+                                         <tr class="thedr1">
+                                            
+                                        
+                                          <tr class="thedr1">
+                                            <td>Total Pay-In Amount</td>
+                                            <td>{{accountdetails=='Cash' ? (cashtotal | number:2):(banktotal | number:2)}} {{RateData.ccyfrom}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+								</div>
+							</div>                                            
+                                
+                              <div class="col-md-12" align="center">
+           				
+           				<button class="btn proceed" ng-click="paymentmode();" type="submit">Proceed</button>
+           			</div>
+             
+                                
+                                
+    			</div>
+	</div>
+	</div>

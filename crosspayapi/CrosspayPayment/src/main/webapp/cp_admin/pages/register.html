@@ -1,0 +1,496 @@
+		<style>
+	/* (1440x900) WXGA+ Display */
+@media  screen and (max-width: 1440px) {
+    /* insert styles here */
+	
+	.logincont {
+    font-family: Roboto;
+    text-transform: none;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 51px;
+    
+}
+}
+				/* (1366x768) WXGA Display */
+	@media  screen and (max-width: 1366px) {
+    /* insert styles here */	
+			
+		.logincont {
+    font-family: Roboto;
+    text-transform: none;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 43px;
+    
+		}
+		.content {
+    padding-top: 300px;
+    
+		}
+	.field {
+    height: 48px;
+    font-size: 20px;
+    color: #000000;
+    font-family: Roboto;
+    border: 1px solid #324762;
+		}
+			}
+			
+			/* (1024x768) iPad 1 & 2, XGA */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* insert styles here */
+
+			.logincont {
+    font-family: Roboto;
+    text-transform: none;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 38px;
+}
+	.ital {
+    color: #2bc7d7;
+    font-size: 23px;
+}		
+	.field {
+    height: 43px;
+    font-size: 15px;
+    color: #000000;
+    font-family: Roboto;
+    border: 1px solid #324762;
+}
+	
+
+			}
+						
+		/* (480x800) Android */
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) {
+    /* insert styles here */
+	.proceed {
+    background: #2bc7d7;
+    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #F8F4F4;
+    margin-bottom: 20px;
+    font-family: Roboto;
+}
+	
+	.proceedregister {
+    background: #ffffff;
+    padding: 10px 46px 10px 46px;
+    font-weight: bold;
+    border-radius: 35px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #2bc7d7;
+    margin-bottom: 20px;
+    font-family: Roboto;
+    border: 3px solid #2bc7d7;
+}
+			}
+			
+	</style>
+							<div class="col-md-6 login" >
+								<div align="center"  class="loginlogo">
+									<a href="single"><img src="img/loginlogo.png" class="img-responsive" alt="Responsive image"></a>
+								</div>
+								<div class="content">
+									<h2 class="logincont"><b>SEND MONEY ONLINE <i class="ital">For Less</i> </b></h2>
+									<!--<h3 class="logincont1"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining</h3>-->
+								</div>
+							</div>
+							
+							<div class="col-md-6 loginform">
+								<div>
+									
+						<form method="post" name="regForm" ng-submit="registration($event)">
+									<div class="col-md-12">
+									
+									<div class="col-md-12">
+										<h1 class="logincont12">Register</h1>
+									</div>
+										<div class="row">
+											<div class="col-md-12" align="center">
+												<span id="error" class="error"></span>
+												<!-- <span id="Country_error" class="error"></span>
+												<span id="Zipcode_error" class="error"></span>
+												<span id="Address_error" class="error"></span>
+												<span id="County_error" class="error"></span>
+												<span id="Fname_error" class="error"></span>
+												<span id="Lname_error" class="error"></span>
+												<span id="Email_error" class="error"></span>
+												<span id="Phone_error" class="error"></span>
+												<span id="Password_error" class="error"></span>
+												<span id="CPassword_error" class="error"></span>
+												<span id="MPassword_error" class="error"></span>
+												<span id="DOB_error" class="error"></span>
+												<span id="Gender_error" class="error"></span>
+												<span id="check_error" class="error"></span> -->
+											</div>
+										</div>
+										
+											<div class="row">
+										<div class="col-md-6">
+												<div class="form-group">
+													<div class="input-group">
+														<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-globe glyph" aria-hidden="true"></span>
+														</div>
+														<!--<input class="form-control field" id="email" name="email" type="text" placeholder="Email/Mobile Number" />-->
+														
+														<select class="form-control field" id="Country" name="Country" ng-model="country">
+															<option value="">Country</option>
+															<option value="UK">United Kingdom</option>
+															<option value="IRL">Ireland</option>
+															<option value="IND">India</option>
+															
+														</select>
+														
+														
+													</div>
+												</div>	
+										</div>
+										
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="glyphicon glyphicon-th glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field" id="Postcode" name="Zipcode" type="text" ng-pattern-restrict="^[A-Za-z0-9]*$" placeholder="Post Code"/>
+												</div>
+											</div>
+										</div>
+										
+										
+										
+								
+										
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<i class="fa fa-address-card-o fa-2x glyph" aria-hidden="true"></i>
+													</div>
+													<input class="form-control field" id="Address" name="Address" type="text" placeholder="Address Line 1" maxlength="120"/>
+												</div>
+											</div>
+										</div>
+										
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<i class="fa fa-address-card-o fa-2x glyph" aria-hidden="true"></i>
+													</div>
+													<input class="form-control field" id="Address" name="Address2" type="text" placeholder="Address Line 2" maxlength="120" />
+												</div>
+											</div>
+										</div>
+										
+										
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<i class="fa fa-address-card-o fa-2x glyph" aria-hidden="true"></i>
+													</div>
+													<input class="form-control field" id="County" name="city" type="text" ng-pattern-restrict="^[A-Za-z]*$" maxlength="20" placeholder="City" />
+												</div>
+											</div>	
+										</div>
+										
+										
+										<div class="col-md-6">
+												<div class="form-group">
+													<div class="input-group">
+														<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-user glyph" aria-hidden="true"></span>
+														</div>
+														<input class="form-control field" id="Fname" name="firstname" type="text" placeholder="First Name" maxlength="60" />
+													</div>
+												</div>	
+										</div>
+										<div class="col-md-6">
+												<div class="form-group">
+													<div class="input-group">
+														<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-user glyph" aria-hidden="true"></span>
+														</div>
+														<input class="form-control field" id="Mname" name="middlename" type="text" placeholder="Middle Name" maxlength="60" />
+													</div>
+												</div>	
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="glyphicon glyphicon-user glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field" id="Lname" name="lastname" type="text" placeholder="Last Name" maxlength="60" />
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="glyphicon glyphicon-envelope glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field" id="Email" name="email" type="text" placeholder="Email Address" />
+												</div>
+											</div>
+										</div>
+										
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-globe glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field countryautocode" id="Code" name="countrycode" ng-init="country=''" value="{{country=='' ? '' : (country=='IND' ? '+91' : (country=='UK' ? '+44' : '+353'))}}" type="text" placeholder="Country Code" readonly="readonly"/>
+												</div>
+											</div>
+										</div>														
+											<div class="col-md-6">
+												<div class="form-group">
+													<div class="input-group">
+														<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-earphone glyph" aria-hidden="true"></span>
+														</div>
+														<input class="form-control field"  id="Phone" name="mobile" type="text" placeholder="Mobile Number" ng-pattern-restrict="^[0-9]*$" maxlength="10" />
+													</div>
+												</div>
+											</div>
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+														<span class="glyphicon glyphicon-lock glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field" id="Password" ng-model="password" name="password" ng-pattern-restrict="^[0-9]*$" maxlength="4" type="password" placeholder="Password" />
+												</div>
+												<span style="color:#F00" ng-show="regForm.password.$error.pattern">Not a valid number!</span>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="glyphicon glyphicon-lock glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field" id="CPassword" name="CPassword" ng-pattern-restrict="^[0-9]*$" maxlength="4" type="password" placeholder="Confirm Password" />
+												</div>
+											</div>
+										</div>
+										
+										
+											<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="glyphicon glyphicon-calendar glyph" aria-hidden="true"></span>
+													</div>
+													<input class="form-control field " id="DOB" type="text" min="{{minDate}}" max="{{maxDate}}" onmouseover="(this.type='date')" onmouseout="(this.type='text')" onfocus="(this.type='date')" onblur="(this.type='text')" name="dateofbirth" maxlength="10" placeholder="Date Of Birth (dd/mm/yyyy)"  />
+												</div>
+											</div>
+										</div> 
+										
+										
+										
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon glipback">
+													<span class="fa fa-venus-mars glyph" aria-hidden="true"></span>
+													</div>
+													<select class="form-control field" id="Gender" name="gender">
+														<option value="">Gender</option>
+														<option value="Male">Male</option>
+														<option value="Female">Female</option>
+														<option value="Other">Other</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div class="form-group">
+											<p class="paraaa"><a href="http://www.crosspayments.com/terms-conditions.html" style="color:#337ab7" target="_blank">By clicking on Register you accept all terms and conditions</a></p>
+											</div>
+										</div>
+										
+										<div class="col-md-12" align="center">
+										<button class="btn proceed1" type="submit">Register</button> <br>
+											<a href="logins"><button class="btn  proceedregister" type="button">Login</button> </a>
+										</div>
+										<!-- <div class="col-md-12" align="center">
+          <button class="btn proceed1" type="submit"  >Register</button> <br>
+           <a href="login.html"><button class="btn  proceedregister" type="button"  >Login</button> </a>
+          </div> -->
+									</div>
+										
+								</div>	
+										
+										
+				</form>
+							
+							<div class="col-md-12" align="center">
+							<!--<h3 class="reglog"> <span class="">Copyright &copy; CrossPayments 2017</span></h3>-->
+								
+							</div>
+							
+							
+							
+								</div>
+							</div>
+    <!-- <script>
+	function Validate()
+		 {
+		
+			 var Country=$("#Country").val();
+			 var Zipcode=$("#Zipcode").val();
+			 var Address=$("#Address").val();
+			 var County=$("#County").val();
+			 var Fname=$("#Fname").val();
+			 var Lname=$("#Lname").val();
+			 var Email=$("#Email").val();
+			 var test_email=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			 var Phone=$("#Phone").val();
+			 var Password=$("#Password").val();
+			 var CPassword=$("#CPassword").val();
+			 var DOB=$("#DOB").val();
+			 var Gender=$("#Gender").val();
+			 var checkbox = $("#checkbox").val();
+		if(Country=="")
+			 {
+				$("#Country_error").html('Choose Your Country');
+				 return false;
+			 } else {
+				$("#Country_error").html('');
+			 }
+		if(Zipcode=="")
+			 {
+				$("#Zipcode_error").html('Enter Your Pin Code');
+				 return false;
+			 } else {
+				$("#Zipcode_error").html('');
+			 }	 
+		
+			 
+			 
+		if(Address=="")
+			 {
+				$("#Address_error").html('Enter Your Address');
+				 return false;
+			 } else {
+				$("#Address_error").html('');
+			 }		 
+		
+		if(County=="")
+			 {
+				$("#County_error").html('Enter Your County');
+				 return false;
+			 } else {
+				$("#County_error").html('');
+			 }	
+		if(Fname=="")
+			 {
+				$("#Fname_error").html('Enter Your First Name');
+				 return false;
+			 } else {
+				$("#Fname_error").html('');
+			 }		 
+		if(Lname=="")
+			 {
+				$("#Lname_error").html('Enter Your Last Name');
+				 return false;
+			 } else {
+				$("#Lname_error").html('');
+			 }	 
+		if(Email=="")
+			 {
+				$("#Email_error").html('Enter Your Email Address');
+				 return false;
+			 } else {
+				$("#Email_error").html('');
+			 }	 
+		if(Email!='' && !test_email.test(Email))
+				{
+					$("#Email_error").html("Enter valid Email Address");
+					return false;
+					
+				}
+				else
+				{
+					$("#Email_error").html("");
+				}  
+		
+		if(Phone=="")
+			 {
+				$("#Phone_error").html('Enter Your Mobile Number');
+				 return false;
+			 } else {
+				$("#Phone_error").html('');
+			 }		 
+			 
+		if(Password=="")
+			 {
+				$("#Password_error").html('Enter Your Password');
+				 return false;
+			 } else {
+				$("#Password_error").html('');
+			 }		 
+			 	 
+		if(CPassword=="")
+			 {
+				$("#CPassword_error").html('Confirm Your Password');
+				 return false;
+			 } else {
+				$("#CPassword_error").html('');
+			 }		 
+			
+		if(Password==CPassword)
+		{
+		$("#MPassword_error").html('');
+			
+		} else {
+			$("#MPassword_error").html('Password & Confirm Password Should Be Same');
+			return false;
+		}
+			 
+			 
+		if(DOB=="")
+			 {
+				$("#DOB_error").html('Enter Your Date Of Birth');
+				 return false;
+			 } else {
+				$("#DOB_error").html('');
+			 }	 
+			 
+		if(Gender=="")
+			 {
+				$("#Gender_error").html('Enter Your Gender');
+				 return false;
+			 } else {
+				$("#Gender_error").html('');
+			 }
+		if(checkbox=="")
+			 {
+				$("#check_error").html('Accept the terms and condition');
+				 return false;
+			 } else {
+				$("#check_error").html('');
+			 }	 
+		
+		}
+	</script> -->

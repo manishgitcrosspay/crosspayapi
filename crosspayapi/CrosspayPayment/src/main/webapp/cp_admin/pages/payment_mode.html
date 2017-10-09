@@ -1,0 +1,226 @@
+
+    
+    <style>
+          /* input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+
+            }*/
+    
+        /*.banakdetails{
+            margin-top: 20px;
+        }   */
+        .group-from {
+            border-bottom :none;
+        }
+        .bankname{
+            
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            
+        }
+        
+        /*.iban{
+            display: none;
+        }*/
+    
+        input[type="file"] {
+    display: none;
+        }
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background:#2bc7d7;
+    border-radius:20px;
+    }
+        .valstyle{
+            color: red;
+        }
+        /*.gen{
+            padding-top: 10px;
+        }*/
+        .radio{
+            padding-left: 20px;
+        }
+        .account{
+            font-size: 27px;
+        }
+    </style>
+
+
+
+
+ <div class="{{navhidebool}}" id="navDisable" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+				<div id="secur"></div>
+            <div ng-if="!ifrmshow">
+            <div class="row">
+               
+                <div class="col-lg-12">
+                   
+                    <div class="page-header" id="test" style="font-size: 20px; font-family: Roboto;font-weight: bold;">How Do You Like To Pay
+                       
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+                
+                 <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           
+                         <div class="form-group group-from">
+
+                             <div class="col-md-2">			   
+                                <label class="radio-inline">
+									<input type="radio" name="bank" ng-model='result' id="cash" value="Debit" target="3"/><span style="font-size: 11px;margin-top:5px;"  class="bankname">Debit/Credit Card</span>
+								</label>
+                             </div>
+                             <div class="col-md-2">			   
+                                <label class="radio-inline">
+									<input type="radio" name="bank" ng-model='result' id="Bank" value="Bankac" target="1"/><span style="font-size: 11px;margin-top:5px;"  class="bankname">Bank Account</span>
+                                   <!-- <input type="radio" ng-model='result'  id="cash" ng-value='"pass"' class="radio" name="bank" id="cash" value="Cash" target="3" style ="font-size:11px" checked><h5 style="font-size: 13px" class="bankname">Debit/Credit Card</h5>-->
+                                </label>
+                             </div>
+								<!-- <div class="col-md-2">    
+									<label class="radio-inline">
+										<input type="radio" ng-model='result'  id="cash" ng-value='"fail"' class="radio" name="bank" value="Bank" id="Bank" style ="font-size:11px"   target="1"  ><h5 style="font-size: 13px" class="bankname">Bank Account</h5>
+									</label>               
+								</div> -->
+                                
+                         </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            
+                              <div class=" col-md-12 banakdetails targetDiv" id="div1">
+											  <div class="row">
+												  <div class="col-md-12">
+												  The transaction will be authorised on receipt of cleared funds in our bank account.
+											  </div>
+											  </div> <br>
+
+											  <div class="col-md-12"> 
+											  <span style="font-size: 18px;font-weight: 700;margin-bottom: 10px;" class="col-md-12">CROSSPAY LTD</span>
+											  <p style="line-height: 18px;" class="col-md-12">AC 20272848</p>
+											  <p style="line-height: 18px;" class="col-md-12">METRO BANK</p>
+											  <p style="line-height: 18px;" class="col-md-12">SORT CODE 23-05-80</p>
+											  <p style="line-height: 18px;" class="col-md-4" ><input type="text" name="" ng-model="banknumber" placeholder="Enter Bank Reference Number" class="form-control"></p>
+
+											  
+											 
+											  </div>
+											  
+
+							  <!-- ./row -->
+						  </div>
+                
+
+                <div class="col-md-12">
+				
+				
+				<!--<button class="btn proceed" style ="margin-left:30px" ng-click="transferProceed(result,banknumber)" type="button">Procced</button>-->
+				
+															 <!-- <iframe id="payment_reference" src="https://payments.securetrading.net/process/payments/choice?sitere
+									ference=test_crosspay68993&mainamount=10.00&currencyiso3a=GBP&version=2&st
+									profile=default" width="100%" height="600" scrolling="auto"
+									style="border:0px;">
+
+
+</iframe>
+
+<button class="btn proceed" style ="margin-left:30px" ng-click="goToHome();" type="button">Back To Home</button>-->
+                         
+						<form method='POST' id="myForm">
+							<button class="btn proceed" style ="margin-left:30px" ng-click="transferProceed(result,banknumber)" type="button">Proceed</button>
+						</form>
+					
+                </div>
+                   
+           
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+               
+                   
+                
+                    
+           
+            
+          
+                  
+            <!-- /.form -->
+        
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+		</div>
+        </div>
+  
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.js"></script>
+
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Material icons select dropdowns -->
+    <!-- <script src='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'></script>
+    <script src='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js'></script> -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+             $('.form-control').focusout(function() {
+            $('.form-group').removeClass('focus');
+        });
+        $('.form-control').focus(function() {
+            $(this).closest('.form-group').addClass('focus');
+        });
+
+            /// Input Kepress Filled  Focus
+    $('.form-control').keyup(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    });
+
+     $("#div1").hide();
+    $("#Bank").click(function() {
+            $("#div1").show();
+
+        });
+        $("#cash").click(function() {
+           $("#div1").hide(); 
+        });
+    });
+</script>
+</body>
+
+</html>

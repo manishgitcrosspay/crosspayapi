@@ -1,0 +1,388 @@
+  <style>
+	  .recname{
+		  color: #2dd8d8;
+	  }	
+	   .recname1{
+		  color: #2dd8d8;
+		   padding-top:40px;
+		   padding-bottom: 42px;
+	  }
+	  .panbot{
+		  border-bottom: 1px solid #2dd8d8;
+	  }
+	  .receiverst{
+		  background-color: #2dd8d8;
+		  color: #FFFFFF;
+		  padding-bottom: 10px;
+	  }
+	  
+	  .panaltext{
+		  padding: 0px;
+	  }
+	  
+	  .receiverst1{
+		   background-color: #2dd8d8;
+		  color: #FFFFFF;
+		  padding-bottom: 10px;
+		  border: none;
+	  }
+	  
+	  .manage{
+		  border: 1px solid #2E2C2C;
+		  padding: 10px;
+	  }
+	  .manage1{
+		
+		  border: 1px solid #2E2C2C;
+		   background-color: #2dd8d8;
+		  color: #FFFFFF;
+	  }
+	  .gap{
+		  margin-top: 32px;
+	  }
+	  
+ </style>
+ <div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+		<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header" style="font-size: 20px;font-weight: bold;"> Receivers
+                       <a href="addreceiver"><button type="button" class="btn btn-info col-md-offset-10">Add New</button></a>
+                        
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row" >
+               
+               <div class="col-md-md-12">
+							<div class="col-md-3 " ng-repeat="x in bdetails.data | reverse" style="margin-bottom: 4px;">
+								<div class="col-md-12 manage" style="height: 160px;">
+									<div class="col-md-5" align="center">
+									<img ng-if="x.image" data-ng-src="{{x.image}}" data-err-src="img/profile-image-large.png"  alt="" class="img-responsive img-circle recname1" style="width:170px;height: 157px;"/>
+									<img ng-if="!x.image" src="img/default.png"  alt="" class="img-responsive img-circle recname1" style="width:170px;height: 157px;"/>
+										 <!-- <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle recname1" /> -->
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1">{{x.first_name}} {{x.middle_name}} {{x.last_name}} </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">{{x.account_num==''?'N/A':x.account_num}}</p>
+									<p>Branch Name</p>
+									<p class="recname">{{x.bank_name==''?'N/A':x.bank_name}}</p>
+									<p>IFSC</p>
+									<p class="recname">{{x.ifsc==''?'N/A':x.ifsc}}</p>
+								<!--	<p>Email Address</p>
+									<p class="recname">{{x.ifsc}}</p>-->
+									<p>Mobile Number</p>
+									<p class="recname">{{x.mobile==''?'N/A':x.mobile}}</p>
+
+									<!--<p>Zip Code</p>
+									<p class="recname">{{x.pincode==''?'N/A':x.pincode}}</p>-->
+								</div>
+								
+								
+								
+								
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h4>Disable</h4>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h4>|	</h4>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h4 ng-click="update(x)">Update</h4>										
+										</div>				
+								</div>
+							</div>
+               
+              
+               		<!--	<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               		
+               <div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               			
+               				
+               			
+               				<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               </div>-->
+               
+        </div>
+        
+        
+        
+        
+         <!--  <div class="row gap">
+               
+               <div class="col-md-md-12">
+							<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               
+              
+               			<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               
+               		
+               
+               		<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               			
+               				
+               			<div class="col-md-3 ">
+								<div class="col-md-12 manage">
+									<div class="col-md-5" align="center">
+										 <img src="img/profile-image-large.png" alt="" class="img-responsive img-circle" />
+									</div>	
+									<div class="col-md-7" align="center">
+											<h5 class="recname1"><b>Jack</b> </h5>
+									</div>	
+								</div>
+								<div class="col-md-12 manage " align="justify">
+									<p>Account Number</p>
+									<p class="recname">00000000000</p>
+									<p>Bank Name</p>
+									<p class="recname">ABCD</p>
+									<p>IFSC</p>
+									<p class="recname">ICI###</p>
+									<p>Email Address</p>
+									<p class="recname">xxxxx@gmail.com</p>
+									<p>Phone Number</p>
+									<p class="recname">99999999</p>
+
+									<p>Zip Code</p>
+									<p class="recname">123456</p>
+								</div>
+								<div class="col-md-12 manage1">
+										<div class="col-md-5" align="center" >
+										  <h3>Disable</h3>										
+										</div>
+										<div class="col-md-2" align="center">
+										  <h3>|	</h3>										
+										</div>
+										<div class="col-md-5"  align="center">
+										  <h3>Update</h3>										
+										</div>				
+								</div>
+							</div>
+               </div>
+               
+        </div>-->
+        
+        
+	</div>
+	</div>

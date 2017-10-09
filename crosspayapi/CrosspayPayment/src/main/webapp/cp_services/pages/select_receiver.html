@@ -1,0 +1,301 @@
+ <style>
+	  .recname{
+    color: black;
+    font-size: 15px;
+      color: black;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+   }
+	  .select{
+		  background: #E3E3E3;
+	  }
+	  
+	  .select1{
+		  background: #FDFDFD;
+		  margin: 10px;
+	  }
+	  /*.select1:hover{
+		  
+		  border: 1px solid #2bc7d7;
+		    color: #2bc7d7;
+	  }*/
+	  
+	  .select2{
+		  background: #FDFDFD;
+		  margin-top: 10px;
+		  margin-bottom: 10px;
+	  }
+	  .addrec{
+		  margin-top: 50px;
+	  }
+
+      .group-from {
+            border-bottom :none;
+        }
+        .bankname{
+            
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            
+        }
+	 .proceeds{
+    
+    background: #2bc7d7;
+    padding: 8px 44px 8px 42px;
+    font-weight: bold;
+    border-radius: 35px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #F8F4F4;
+    margin-top: -5px;
+    font-family:Roboto;
+}
+
+.hilight{
+    color: #2bc7d7;
+}
+.targetDiv{
+    display:none;
+}
+ </style>
+
+   <script>
+		  $(document).ready(function(){
+			$(this).scrollTop(0);
+		});
+  </script>
+  
+  
+
+</head>
+
+<body>
+<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav >
+            
+
+           <!-- <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       
+                     
+                      
+                        
+                    </ul>
+                </div>-->
+                <!-- /.sidebar-collapse -->
+            <!--</div>-->
+            <!-- /.navbar-static-side -->
+        </nav>
+
+					<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header" style="font-size: 25px;font-weight: bold;"> Select Receiver
+
+                     <a href="addreceiver"><button class="btn proceeds pull-right" type="submit" >Add </button></a>    
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+            <div class="row">
+                
+                <div class="container-fluid well">
+               <div class="">
+							<div class="col-md-12" >
+								
+                                
+                                <div class="col-md-3 select1" id="select_id" ng-repeat="x in bdetails.data | reverse" ng-click="showPaymentMode($event, x)">
+										<div class="col-md-4 select2">
+										<img data-ng-src="{{x.image}}" data-err-src="img/profile-image-large.png"  alt="" class="img-responsive img-circle recname1"  style="width:200px;height: 60px;"/>
+									<img ng-if="!x.image" src="img/profile-image-large.png"  alt="" class="img-responsive img-circle recname1"  style="width:200px;height: 60px;"/>
+
+										</div>
+										<div class="col-md-8">
+											<h4>{{x.first_name}}<i class="fa fa-check-circle-o pull-right icon" aria-hidden="true" ></i> </h4>
+											<p class="recname">{{x.bank_name==''?'N/A':x.bank_name}}</p>
+											<p>{{x.account_num==''?'N/A':x.account_num}}</p>
+										</div>
+						
+								</div>
+								
+								
+                						
+                							
+                								
+                										
+                
+                	<!-- ./well -->
+                </div></div>
+    
+                <div id="account" class="container-fluid well">
+                 <div class="row">
+                 <div class=" col-md-12">
+                      <div class="col-md-12">
+                        <div class="page-header" style="font-size: 25px;font-weight: bold;"> Payment Mode
+                    </div>
+                      </div>
+
+                      <form id="myForm">
+
+                        
+                             <div class="form-group group-from">
+
+                             <div class="col-md-2">    
+                                <label class="radio-inline">
+                                    <input type="radio" class="radio" name="radioName" id="Cash" value="Cash" target="3" checked><h3 class="bankname">Cash</h3>
+                                </label>
+                             </div>
+                             <div class="col-md-2">    
+                                     <label class="radio-inline">
+                               <input type="radio" class="radio" name="radioName" value="Bank" id="Bank"   target="1"  ><h3 class="bankname">Account Credit</h3>
+                                            </label>               
+                            </div>
+							
+							 <div class="col-md-6">    
+                                  <p style="text-align: end;color: red;">Note: We do not accept funds from third party accounts or cards</p>             
+                            </div>
+							
+							
+							
+                                
+                                        </div>
+
+                            </form>            
+                            <!-- <div class="col-md-1" We do not accept funds from third party accounts or cards> 
+                                <input type="radio" class="radio  showSingle" name="bank" id="Iban" value="IBAN" target="2" >
+                            </div>
+                
+                
+                            <div class="col-md-2" align="center"> 
+                                <h3 class="bankname">IBAN</h3>
+								 <option value="">Select Payout-Network</option>  
+                            </div> -->
+							
+							<div class=" col-md-12 banakdetails targetDiv" id="div2">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                               
+                              
+								 
+								 <select  class="form-control" ng-model="selectedName"  ng-options="x.agent_name for x in pout" >
+								  <option value="">Select Payout-Network</option>
+								 </select>
+        
+                                  
+                               
+							
+                            </div>
+                           
+                            </div>
+							</div>
+
+                            <div class=" col-md-12 banakdetails targetDiv" id="div1">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">IFSC</lable>
+                                    <input class="form-control" ng-model='ifscCode' id="ifsc" name="ifsc" type="text" required/>
+                                </div> 
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">Branch Name</lable>
+                                    <input class="form-control" ng-model='bankName' type="text" id="bankname" name="bankname" required/>
+                                </div> 
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">Account Number</lable>
+                                    <input class="form-control" ng-model='accountNumber' id="accountno" name="accountno" ng-pattern-restrict="^[0-9.]*$" maxlength="16" pattern=".{9,16}" title="9 digits minimum" required/>
+                                </div> 
+                            </div>
+							
+							
+                    
+                
+                 </div>
+                
+
+                 </div>
+
+                  <!-- <div class="hr-line-dashed"></div> -->
+                    <div class="col-md-12" align="center">
+                        
+                        <a  ng-click="showCash(ifscCode,bankName,accountNumber,perticular_benef,selectedName)" ng-if="radiotype==Bank"><button class="btn proceed" type="submit">Proceed</button></a>
+                       
+                
+                    </div>
+                    </div>
+            <!-- /.row -->
+        </div>
+		</div>
+    </div>
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.js"></script>
+
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+        $("#div1").hide();
+		
+        $("#account").hide();
+        $("#div2").hide(); 
+
+         $('.form-control').focusout(function() {
+            $('.form-group').removeClass('focus');
+        });
+        $('.form-control').focus(function() {
+            $(this).closest('.form-group').addClass('focus');
+        });
+
+        $("#select_receiver").click(function() {
+            $("#account").show();
+            $("#select_id").css("border", "2px solid #2bc7d7");
+             
+        });
+        
+        $("#Bank").click(function() {
+            $("#div1").show();
+			 $("#div2").hide(); 
+			 
+			 
+
+        });
+        $("#Cash").click(function() {
+		    $("#div1").hide();
+           $("#div2").show(); 
+		  
+        });
+     });   
+    </script>
+    <script>
+  function isNumber2(evt) {
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && ( charCode < 48 || charCode > 57 )) {
+   return false;
+  }
+  return true;
+ }
+  </script>

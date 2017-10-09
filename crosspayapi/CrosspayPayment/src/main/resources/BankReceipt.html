@@ -1,0 +1,153 @@
+<html>
+<style type="text/css">
+	body {
+		 margin:10; padding:15;font-size: 7pt;font-family:Garamond;border-left:5px solid black;border-width: 10px;    border-style: solid;    border-color: blue;
+	}
+	  table{
+		border-collapse: collapse;
+		border: 0.5px solid white;
+	}
+	table tr td {
+		/* border: 0.5px solid black; */
+		padding: 5px;
+	}  
+</style>
+<body>
+	<table width=150% cellpadding=0 cellspacing=0 border=1>
+<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+	<p style="margin-left:240px;"><img src='http://www.crosspayments.com/img/crosspay-logo.png'/></p>
+	</td></tr>
+	<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+		<table  cellpadding=2 cellspacing=2 width=100%>
+		<tr>
+			<td colspan=3 style="background-color:#b4b9c1"><b><i>Money Transfer Details</i></b></td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Transaction # <font color="red"><span style="font-weight:bold"> ${customTemplate.transaction}</span></font></td>
+			<td align="right" style="border-right-color:#fff;border-top-color:#fff;">Type : <span style="font-weight:bold">${customTemplate.type}</span></td>
+			<td align="right" style="border-top-color:#fff;">Transaction Date : <span style="font-weight:bold">${customTemplate.transactiondate}</span></td>
+		</tr>
+	</table>
+	
+	</td></tr>
+	<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+<table width=150% cellpadding=0 cellspacing=0 padding="0px">
+<tr><td style="border-color: #fff; padding:0px">
+	<table cellpadding=2 cellspacing=2>
+		<tr>
+			<td width="200" style="border-right-color:#fff;">Transfer Amount</td><td width="125" align="right" style="border-right-color:#fff;"><span style="font-weight:bold">${customTemplate.transferamount}</span></td><td width="50"><span style="font-weight:bold">${customTemplate.accountccy}</span></td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Currency Rate (1 ${customTemplate.payeeccy} = )</td><td align="right" style="border-right-color:#fff;border-top-color:#fff;"><i>${customTemplate.currencyrate}</i></td><td style="border-top-color:#fff;">${customTemplate.accountccy}</td>
+		</tr>
+
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Equivalent Local Amount</td><td align="right" style="border-right-color:#fff;border-top-color:#fff;">${customTemplate.localamount}</td><td style="border-top-color:#fff;">${customTemplate.payeeccy}</td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Transfer Fee</td><td align="right" style="border-right-color:#fff;border-top-color:#fff;">${customTemplate.transferfee}</td><td style="border-top-color:#fff;">${customTemplate.payeeccy}</td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Total Order Amount</td><td align="right" style="border-right-color:#fff;border-top-color:#fff;"><span style="font-weight:bold">${customTemplate.totalorderamount}</span></td><td style="border-top-color:#fff;"><span style="font-weight:bold">${customTemplate.payeeccy}</span></td>
+		</tr>
+	</table>
+</td>
+<td align="right" valign="top"  style="border-color: #fff; padding:0px">
+<!--	<div style='position:absolute; top: 204px; left: 500px'> -->
+	<table cellpadding=2 cellspacing=2>
+		<tr>
+			<td width="100" style="border-right-color:#fff;">Payment Mode</td><td width="150">${customTemplate.paymentmode}</td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Card / Bank Txn. Ref. #</td><td style="border-top-color:#fff;">${customTemplate.cardtxnref}</td>
+		</tr>
+	</table>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+	<table  cellpadding=2 cellspacing=2 width=100%>
+		<tr><td colspan=2 style="background-color:#b4b9c1"><span style="font-weight:bold"><i>Receiver Details</i></span></td></tr>
+		<tr><td width="200" style="border-right-color:#fff;border-top-color:#fff;">Account Name</td>
+			<td style="border-top-color:#fff;">${customTemplate.accountname}</td>
+		</tr>
+		<tr><td style="border-right-color:#fff;border-top-color:#fff;">Account</td>
+			<td style="border-top-color:#fff;">${customTemplate.accountnum}</td>
+		</tr>
+		<tr><td style="border-right-color:#fff;border-top-color:#fff;">Bank</td>
+			<td style="border-top-color:#fff;">${customTemplate.bank}</td>
+		</tr>
+		<tr><td style="border-right-color:#fff;border-top-color:#fff;">IFSC</td>
+			<td style="border-top-color:#fff;">${customTemplate.ifsc}</td>
+		</tr>
+	</table>
+	</td></tr>
+	<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+	<table  cellpadding=2 cellspacing=2 width=100%>
+		<tr>
+			<td colspan=2 style="background-color:#b4b9c1"><span style="font-weight:bold"><i>Sender Details</i></span></td>
+		</tr>
+		<tr><td width="200" style="border-right-color:#fff;border-top-color:#fff;">Customer # </td><td style="border-top-color:#fff;">${customTemplate.customerno}</td></tr>
+		<tr><td style="border-right-color:#fff;border-top-color:#fff;">Name</td><td style="border-top-color:#fff;">${customTemplate.custoername}</td></tr>
+		<tr><td style="border-right-color:#fff;border-top-color:#fff;">Mobile</td><td style="border-top-color:#fff;">${customTemplate.customermobile}</td></tr>
+		<tr><td rowspan="3" style="border-right-color:#fff;border-top-color:#fff;">Address</td><td style="border-top-color:#fff;">${customTemplate.customeradd1}</td></tr>
+		<tr><td style="border-top-color:#fff;">${customTemplate.customeradd2}</td></tr>
+		<tr><td style="border-top-color:#fff;">${customTemplate.customercity}</td></tr>
+	</table>
+	</td></tr>
+	
+	
+	<!--  <tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+	<table cellpadding=2 cellspacing=2 width=100%>
+		<tr>
+			<td colspan=4 style="background-color:#b4b9c1"><span style="font-weight:bold"><i>Sender ID Details</i></span></td>
+		</tr>
+		<tr>
+			<td width="200" style="border-right-color:#fff;border-top-color:#fff;">ID Type/Name </td><td width="400" style="border-right-color:#fff;border-top-color:#fff;">----</td>
+			<td width="200" style="border-right-color:#fff;border-top-color:#fff;">ID #</td><td width="400" style="border-top-color:#fff;">----</td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Issued At </td><td style="border-right-color:#fff;border-top-color:#fff;">----</td>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Issued By</td><td style="border-top-color:#fff;">----</td>
+		</tr>
+		<tr>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Issue Date</td><td style="border-right-color:#fff;border-top-color:#fff;">----</td>
+			<td style="border-right-color:#fff;border-top-color:#fff;">Expiry Date</td><td style="border-top-color:#fff;">----</td>
+		</tr>
+	</table>
+	</td></tr>
+	<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+	<table cellpadding=2 cellspacing=2 width=100%>
+		<tr>
+			<td width="200" style="border-right-color:#fff">Source of Fund</td><td width="400" style="border-right-color:#fff">----</td>
+			<td width="200" style="border-right-color:#fff">Purpose of Transfer</td><td width="400">----</td>
+		</tr>
+	</table>
+	</td></tr>-->
+	
+	
+	
+	<tr style="line-height:0px;padding:0px;"><td style="border-color: #fff;">
+		<p align="justify" style="text-align:justify;line-height:16px;margin-bottom:5px;"><span style="font-weight:bold">Disclaimer: </span> This transaction is executed by Crosspay, subject to the condition that
+		it will not be held liable for delay/non-payment/under-payment/non-delivery/non-credit at destination point due to reasons beyond it's
+		control or disruption of computer/communication network/systems. Payment/credit at destination is subject to rules and regulations of that
+		country. Crosspay is not responsible for any service issues if the data provided by the customer is inadequate or incorrect.   
+		<br /><br />
+		<span style="font-weight:bold">Declaration by customer: </span>I/We hereby declare that the source of fund and purpose of transfer are as declared above
+		 and not intended for any illegal activities. I/We declare that this remittance transaction is ordered by me/us
+		 and not on behalf of any other party. <br />
+		 </p>
+		<br /><br />
+		<p class="para para1" style="border-bottom: 0px solid #5F5D5D;"><span style="font-size: 7pt;"><i>~ This is a computer generated receipt and therefore doesn't require signatures.</i></span><hr /></p>
+		<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crosspay Ltd., Suites 3-4, Essex House, Upminster, RM14 2SJ, United Kingdom. +44 (0) 203 096 2255, support@crosspayments.com<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Company Registration # 09749104. 
+Crosspay Ltd. is authorised by the Financial Conduct Authority (FCA) for the provision of payment services.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firm Reference # 720157 and regulated by the HM Revenue & Customs as a Money Service Business. 
+MLR Registration # 12847230
+		</p>
+		</td></tr>
+	</table>
+</body>
+</html>

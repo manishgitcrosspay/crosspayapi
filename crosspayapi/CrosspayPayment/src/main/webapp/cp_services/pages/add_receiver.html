@@ -1,0 +1,520 @@
+  	<style>
+
+
+
+
+
+
+
+
+		  .group-from {
+            border-bottom :none;
+        }
+		.bankname{
+			
+			margin-top: 0px;
+			margin-bottom: 10px;
+			font-size: 18px;
+			
+		}
+		
+		
+	
+		input[type="file"] {
+    display: none;
+		}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background:#2bc7d7;
+    border-radius:20px;
+	}
+		.valstyle{
+			color: red;
+		}
+		/*.gen{
+			padding-top: 10px;
+		}*/
+		.radio{
+			padding-left: 20px;
+		}
+		.account{
+			font-size: 27px;
+		}
+		.targetDiv{
+			display:none
+		}
+	</style>
+  <script>
+      $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
+
+  </script>
+	<div class="{{navhidebool}}" ng-class="{'navhide': navhidebool}" nav-hide ng-include="'pages/navigation.html'"></div>
+    <div id="wrapper" ng-controller="addReceiverCtrl">
+        <div id="page-wrapper">
+           <form>
+            <div class="row">
+               
+                <div class="col-lg-12">
+                   
+                    <div class="page-header" style="font-size: 20px; font-family: Roboto;font-weight: bold;">Add Receiver
+                       
+                      
+                        
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <!-- /.row -->
+             <div class="row">
+                
+                
+                	<div class="col-md-12" align="center">
+                		
+                		<span id="fname_error" class="valstyle"></span>
+                		<span id="mname_error" class="valstyle"></span>
+                		<span id="lname_error" class="valstyle"></span>
+                        <span id="country_error" class="valstyle"></span>
+                        <span  id="city_error" class="valstyle"></span>
+                        <span id="state_error" class="valstyle"></span>
+                        <span id="zipcode_error" class="valstyle"></span>
+                		<span id="email_error" class="valstyle"></span> 
+                		<span id="gender_error" class="valstyle"></span>
+                		<span id="mobile_error" class="valstyle"></span> 
+                		<span id="resume_error" class="valstyle"></span>
+                		<span id="resume_error1" class="valstyle"></span>
+                		<span id="ifsc_error" class="valstyle"></span>
+						<span id="bank_error" class="valstyle"></span>
+						<span id="branch_error" class="valstyle"></span>
+                		<span id="account_error" class="valstyle"></span>
+                		<span id="IBAN_error" class="valstyle"></span>
+                		<span id="City_error" class="valstyle"></span>
+                		<span id="State1_error" class="valstyle"></span> 
+                	</div>
+                
+                <div class="row">
+                    <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">First Name</lable>
+                                <input class="form-control txtFirstName" model="first_name" id="fname" type="text"/>
+                            </div>    
+                        </div>
+       
+                       
+                            
+                                 
+                        <div class=" col-md-4">
+                            <div class="form-group">
+                                <lable class="form-label">Middle Name</lable>
+                                <input class="form-control txtFirstName"  model="middle_name" id="mname" type="text"/>
+                            </div>    
+                        </div>
+           
+           
+
+                        <div class=" col-md-4">
+                            
+                            <div class="form-group">
+                                <lable class="form-label">Last Name</lable>
+                                <input class="form-control txtFirstName" model="last_name" id="lname" type="text"/>
+                            </div>
+                        </div>
+                   
+                        </div>
+                     <div class="hr-line-dashed"></div>
+                    <div class="row">
+						<div class=" col-md-4">
+							<div class="form-group">
+								
+                                 <div  >
+        
+                                    <select class="form-control" id="country" ng-model="country">
+                                      <option value="">Choose Country</option>                                      
+                                      <option value="INDIA">INDIA </option>
+                                      <option value="UNITED STATES">UNITED STATES</option>
+                                      <option value="PHILIPPINES">PHILIPPINES </option>
+                                    </select>
+                              </div>
+							</div>    
+						</div>            
+                        
+                      <!--  <div class=" col-md-4">
+                            <div class="form-group">
+                                
+                                 <div  >
+        
+                                    <select class="form-control" id="state" model="county">
+                                      <option value="">Choose County</option>
+                                     <option value="Scotland">Scotland </option>
+                                      <option value="London">London </option>
+                                      <option value="Derby">Derby</option>
+                                    </select>
+                              </div>
+                            </div>    
+                        </div>-->
+     
+
+						 <div class=" col-md-4">
+                            
+		
+		                             <div class="form-group">
+                                <lable class="form-label">City</lable>
+                                <input class="form-control inputTextBox" model="city" id="city" type="text"/>
+                            </div>
+                                   
+                               
+                        </div>
+                    </div>
+                     <div class="hr-line-dashed"></div>
+                     <div class="row">
+						<div class=" col-md-4">				
+							
+
+                        <div class="form-group group-from">
+
+                             <div class="col-md-4">    
+                                <label class="radio-inline">
+                                    <input type="radio" class="radio" model="gender" name="gender" value="Male" checked="checked" ><p class="gen">Male</p>
+                                </label>
+                             </div>
+                             <div class="col-md-4">    
+                                      <label class="radio-inline">
+                                               <input type="radio" class="radio" model="gender" name="gender" value="Female" ><p class="gen">Female</p>
+                                            </label>               
+                            </div>
+                                
+                                        </div>
+							 
+						</div>
+                     
+                       
+							<div class="col-md-4" align="left">
+								<!-- <p>Receiver Image</p> --><b>Receiver Image</b> 
+								<label for="file-upload" class="custom-file-upload">
+								<i class="fa fa-cloud-upload"></i> Upload
+								</label>
+								<!--  <button ng-click="selectFile()">Upload Your File</button> -->
+             <input type="file" style="display:none" 
+                id="file-upload" name='file' onchange="angular.element(this).scope().JDAgreementIDuploadClicked(this.files)" />
+                <img ng-src="{{image}}" height="100" width="100" ng-show="image"/>
+								<!-- <input id="file-upload" ng-model="image" type="file" name="file" onchange="angular.element(this).scope().functionnnn(this.files)"/> ng-change="getBase64($event)"
+								 -->
+								<textarea id="imagedata" ng-show="false"></textarea>
+								<!-- <div class="input-group">
+								  <input id="image" class="hidden" type="file" ng-model="imageName" name="imageName">
+								  <img ng-src="{{image}}" height="100" width="100" ng-show="image"/>
+								  <label for="image" class="btn btn-success btn-xs pull-center" name="upload" Value="">Upload Photo</label>
+								</div> -->
+
+<!--  <input id="file" type="file"/> -->
+							</div>
+         
+                              <div class="col-md-4"></div>
+                            </div>
+                             <div class="hr-line-dashed"></div>
+            <div class="row">
+                 <div class=" col-md-4">
+                                 
+                                <div class="form-group">
+                                    <lable class="form-label">Mobile Number</lable>
+                                    <input class="form-control" model="mobile" id="mobile" type="text" ng-pattern-restrict="^[0-9]*$" onkeypress="return isNumber2(event)" maxlength="10" />
+                                </div>    
+                            </div>
+
+                        
+                            <div class=" col-md-8">
+                           
+                          <!--   <div class="col-md-7">
+                                <div class="form-group">
+                                    <lable class="form-label">Phone Number</lable>
+                                    <input class="form-control" model="phone" id="Phone" type="text"  ng-pattern-restrict="^[0-9]*$" onkeypress="return isNumber2(event)" maxlength="10"/>
+                                </div>   
+                            </div> -->
+							
+							
+                             <!--<div class="col-md-5">
+                                <div class="form-group">
+                                    <lable class="form-label">Zip Code</lable>
+                                    <input class="form-control" model="pincode" id="Ccode" type="text" maxlength="10"  />
+                                </div>
+                            </div>  -->    
+                            </div>
+            </div>
+         
+           <div class="hr-line-dashed"></div>
+           <div class="row">
+            <div class=" col-md-12">
+                      <div class="col-md-12">
+                      <!-- 	 <h4 class="account">Service Type</h4> -->
+                      	  <div class="page-header" style="font-size: 20px; font-family: Roboto;font-weight: bold;">Service Type
+                        
+                    </div>
+                      </div>
+                             <div class="form-group group-from" style="margin-top:10px">
+
+                             <div class="col-md-2">    
+                                <label class="radio-inline">
+                                    <input type="radio" class="radio showSingle" model="account_number" name="bank" id="cash" value="Cash" target="3" checked><h3 class="bankname">Cash Pick-Up</h3>
+                                </label>
+                             </div>
+                             <div class="col-md-2">    
+                                      <label class="radio-inline">
+                                               <input type="radio" class="radio showall" model="account_number" name="bank" value="Bank" id="Bank"   target="1"  ><h3 class="bankname">Account Credit</h3>
+                                            </label>               
+                            </div>
+                                
+                                        </div>
+                            <!-- <div class="col-md-1"> 
+                                <input type="radio" class="radio  showSingle" name="bank" id="Iban" value="IBAN" target="2" >
+                            </div>
+                
+                
+                            <div class="col-md-2" align="center"> 
+                                <h3 class="bankname">IBAN</h3>
+                            </div> -->
+                            <!-- <div class="col-md-7"></div> -->
+
+                            <div class=" col-md-12 banakdetails targetDiv " ng-show="country=='INDIA'" id="div1"  >
+                              <!-- ng-if="country=='India'" -->
+                             
+                              <div class="col-md-3">
+                                <div class="form-group" >
+                                  
+                               <!-- <select   class="form-control" id="bankname" model="bankname" >
+                                      <option value="">Please Select Bank Name</option>                                      
+                                      <option value="Andhra Bank">Andhra Bank </option>
+                                      <option value="bank of baroda">Bank of Baroda</option>
+                                      <option value="canara bank">Canara Bank</option>
+                                    </select>-->
+									
+									
+									<!-- <select  class="form-control"  id="bankname" model="bankname"  ng-options="x.bank_name for x in payoutbank">
+								  <option value="">Please Select Bank Name</option>
+								   </select>-->
+								   
+								    <select  class="form-control" ng-model="selectedName"   ng-options="x.bank_name for x in payoutdata">
+								  <option value="">Select Bank Name</option>
+								 </select>
+									
+                                  </div>
+                              </div>
+                           
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">IFSC</lable>
+                                    <input class="form-control" id="ifsc" model="ifsc" name="ifsc" type="text"/>
+                                </div> 
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">Branch Name</lable>
+                                    <input class="form-control" type="text" id="bank_name" model="bank_name" name="bank_name" />
+                                </div> 
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">Account Number</lable>
+                                    <input class="form-control" id="accountno" model="account_number" name="accountno" ng-pattern-restrict="^[0-9.]*$" maxlength="16" pattern=".{9,16}" title="9 digits minimum"/>
+                                </div> 
+                            </div>
+                    </div>
+
+                    <!-- usa start -->
+                      <div class=" col-md-12 banakdetails targetDiv  " ng-show="country=='UNITED STATES'"  id="div1">
+                          <!-- ng-if="country=='USA'" -->
+                              <div class="col-md-3">
+                                <div class="form-group" >
+                                  
+                             
+								   
+								    <select  class="form-control" ng-model="selectedName"   ng-options="x.bank_name for x in payoutdataus">
+								  <option value="">Select Bank Name</option>
+								 </select>
+									
+                                  </div>
+                              </div>
+							  
+							  
+							  
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">SWIFTCODE</lable>
+                                    <input class="form-control" id="ifscunited" model="ifscunited" name="ifsc" type="text"/>
+                                </div> 
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">Branch Name</lable>
+                                    <input class="form-control" type="text" id="bank_nameunited" model="bank_nameunited" name="bank_name" />
+                                </div> 
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <lable class="form-label">Account Number</lable>
+                                    <input class="form-control" id="account_numberunited" model="account_numberunited" name="account_numberunited" ng-pattern-restrict="^[0-9.]*$" maxlength="16" pattern=".{9,16}" title="9 digits minimum"/>
+                                </div> 
+                            </div>
+                    </div>
+
+                    <!-- usa end -->
+
+                    <!-- philippines start -->
+
+                        <div class=" col-md-12 banakdetails targetDiv" ng-show="country=='PHILIPPINES'" id="div1">
+
+                              <div class="col-md-4">
+                                <div class="form-group" >
+                                  
+                                <!--<select   class="form-control" id="banknamephp" model="banknamephp" >
+                                      <option value="">Bank Name</option>                                      
+                                      <option value="andra bank"> BDO Unibank </option>
+                                      <option value="bank of baroda">Metrobank</option>
+                                      <option value="canara bank">  RCBC </option>
+                                    </select>-->
+									
+									 <select  class="form-control" ng-model="selectedName"   ng-options="x.bank_name for x in payoutdatas">
+								  <option value="">Select Bank Name</option>
+								 </select>
+                                  </div>
+                              </div>
+                           
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">Branch Name</lable>
+                                    <input class="form-control" type="text" id="bank_namephp" model="bank_namephp" name="bank_namephp" />
+                                </div> 
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable class="form-label">Account Number</lable>
+                                    <input class="form-control" id="account_numberphp" model="account_numberphp" name="account_numberphp" ng-pattern-restrict="^[0-9.]*$" maxlength="16" pattern=".{9,16}" title="9 digits minimum"/>
+                                </div> 
+                            </div>
+                    </div>
+
+                    <!-- philippines end -->
+                
+                 </div>
+                 </div>  
+                <div class="hr-line-dashed"></div>
+           			<div class="col-md-12" align="center">
+           				
+           				<button class="btn proceed" ng-click="addReceiver(selectedName)">Save</button>
+           			</div>
+           
+           
+            
+          
+                  
+           
+        
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+         </form>
+		</div>
+  
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+             $('.form-control').focusout(function() {
+            $('.form-group').removeClass('focus');
+        });
+        $('.form-control').focus(function() {
+            $(this).closest('.form-group').addClass('focus');
+        });
+
+            /// Input Kepress Filled  Focus
+    $('.form-control').keyup(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    });
+
+    /// Input Check Filled Focus
+    var $formControl = $('.form-control');
+    var values = {};
+    var validate =    $formControl.each(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.form-group').addClass('filled');
+        }
+        else{
+            $(this).closest('.form-group').removeClass('filled');
+        }
+    }); 
+    })
+</script>
+   
+   <script>
+			function isNumber(evt) {
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+				return false;
+			}
+			return true;
+		}
+	
+	</script>
+   
+   
+   
+   
+    <script>
+	
+	jQuery(function(){
+         jQuery('.showall').click(function(){
+               jQuery('.targetDiv').show();
+        });
+        jQuery('.showSingle').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div'+$(this).attr('target')).show();
+        });
+	});
+	</script>
+	
+    
+	
+	
+  <script type="text/javascript">
+    
+
+    $(function () {
+      $('.txtFirstName').keydown(function (e) {
+          if (e.shiftKey || e.ctrlKey || e.altKey) {
+              e.preventDefault();
+          } else {
+              var key = e.keyCode;
+              if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+                  e.preventDefault();
+              }
+          }
+      });
+  });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".inputTextBox").keypress(function(event){
+        var inputValue = event.which;
+        // allow letters and whitespaces only.
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
+            event.preventDefault(); 
+        }
+    });
+});
+</script>
